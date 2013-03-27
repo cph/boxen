@@ -45,7 +45,7 @@ Here are the steps that Boxen should perform to setup an EP development environm
 
 ##### Ruby
 
- * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._ :x: _There are several available on Github, none developed specifically for Boxen. The most active, [blt04/puppet-rvm](https://github.com/blt04/puppet-rvm), is specifically for installing system RVM (as root), which we do not want to do. Is there a lightweight way to run shell scripts with puppet? Installing RVM (and even the Rubies and Gems below) are simple one-liners when the requirements are met!_
+ * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._ :x: _There are several on Github, none developed specifically for Boxen. The most active, [blt04/puppet-rvm](https://github.com/blt04/puppet-rvm), is specifically for installing system RVM (as root), which we do not want to do. Is there a lightweight way to run shell scripts with puppet? Installing RVM (and even the Rubies and Gems below) are simple one-liners when the requirements are met! [jfryman/puppet-rvm](https://github.com/jfryman/puppet-rvm) is promising: he works for GitHub. The others are: [fup/puppet-rvm](https://github.com/fup/puppet-rvm) and [rtyler/puppet-rvm](https://github.com/rtyler/puppet-rvm)._
    * Install [Rubies](http://www.ruby-lang.org/en/)
       * 1.9.3-p392
       * 2.0.0-p0
