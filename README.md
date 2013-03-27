@@ -40,50 +40,54 @@ Here are the steps that Boxen should perform to setup an EP development environm
 
 ##### Foundations
 
- * Install [Homebrew](http://mxcl.github.com/homebrew/)
- * Install [Git](http://git-scm.org/)
+ * Install [Homebrew](http://mxcl.github.com/homebrew/) :shipit: [boxen/puppet-homebrew](https://github.com/boxen/puppet-homebrew)
+ * Install [Git](http://git-scm.org/) :shipit: [boxen/puppet-git](https://github.com/boxen/puppet-git)
 
 ##### Ruby
 
- * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._
- * Install [Rubies](http://www.ruby-lang.org/en/) _Everyone should be able to develop on 1.9.3-p392 and on Ruby 2.0.0-p0_
- * Install Gems _Most gems will be installed by bundler on behalf of the individual projects that require them. There are, however, a few global gems, not specified by Gemfiles, but required nonetheless_
-   * [Bundler](http://gembundler.com/) _For managing projects' dependencies_
-   * [Capistrano](http://capistranorb.com/) _For deploying_
-   * [rvm-capistrano](https://github.com/wayneeseguin/rvm-capistrano) _Because we deploy to servers that run RVM_
-   * [Powder](https://github.com/Rodreegez/powder) _Shortcuts for managing Pow_
- * Install [Pow](http://pow.cx/) _Pow is used to run applications locally APPNAME.dev. This is useful when you need multiple applications running on your local computer in order to develop. For example, Unite relies on both Members (@ 360.dev) and Epic Auth (@ epic-auth.dev)._
+ * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._ :x: _There are several available on Github, none developed specifically for Boxen. The most active, [blt04/puppet-rvm](https://github.com/blt04/puppet-rvm), is specifically for installing system RVM (as root), which we do not want to do. Is there a lightweight way to run shell scripts with puppet? Installing RVM (and even the Rubies and Gems below) are simple one-liners when the requirements are met!_
+   * Install [Rubies](http://www.ruby-lang.org/en/)
+      * 1.9.3-p392
+      * 2.0.0-p0
+   * Install Gems _Most gems will be installed by bundler on behalf of the individual projects that require them. There are, however, a few global gems, not specified by Gemfiles, but required nonetheless_
+     * [Bundler](http://gembundler.com/) _For managing projects' dependencies_
+     * [Capistrano](http://capistranorb.com/) _For deploying_
+     * [rvm-capistrano](https://github.com/wayneeseguin/rvm-capistrano) _Because we deploy to servers that run RVM_
+     * [Powder](https://github.com/Rodreegez/powder) _Shortcuts for managing Pow_
+ * Install [Pow](http://pow.cx/) _Pow is used to run applications locally APPNAME.dev. This is useful when you need multiple applications running on your local computer in order to develop. For example, Unite relies on both Members (@ 360.dev) and Epic Auth (@ epic-auth.dev)._ :x:
  
 ##### Databases
 
- * Install [MySQL](http://dev.mysql.com/downloads/mysql/5.1.html#downloads) _I believe the version we run is 5.1_
- * Install [Postgres](http://www.postgresql.org/download/macosx/) _I believe [Postgres.app](http://postgresapp.com/) is the best way of installing this_
+ * Install [MySQL](http://dev.mysql.com/downloads/mysql/5.1.html#downloads) _I believe the version we run is 5.1_ :shipit: [boxen/puppet-mysql](https://github.com/boxen/puppet-mysql) _uses Homebrew_
+ * Install [Postgres](http://www.postgresql.org/download/macosx/) _I believe [Postgres.app](http://postgresapp.com/) is the best way of installing this_  :shipit: [boxen/puppet-postgresql](https://github.com/boxen/puppet-postgresql) _uses Homebrew to compile postgres, not Postgres.app..._
+ * Install [Redis](http://redis.io/) _for Resque_ :shipit: [boxen/puppet-redis](https://github.com/boxen/puppet-redis)
 
 ##### Packages
 
- * Install [ImageMagick](http://www.imagemagick.org/) _used by most apps that do any image resizing or processing_
- * Install [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to modify PDF metadata_
- * Install [mdb-tools 0.7](https://github.com/brianb/mdbtools) _used by Members to import Shepherd's Staff data_
- * Install [phantomjs](http://phantomjs.org/) _used to run integration tests headlessly_
+ * Install [ImageMagick](http://www.imagemagick.org/) _used by most apps that do any image resizing or processing_ :shipit: [boxen/puppet-imagemagick](https://github.com/boxen/puppet-imagemagick)
+ * Install [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to modify PDF metadata_ :x:
+ * Install [mdb-tools 0.7](https://github.com/brianb/mdbtools) _used by Members to import Shepherd's Staff data_ :x:
+ * Install [phantomjs](http://phantomjs.org/) _used to run integration tests headlessly_ :shipit: [boxen/puppet-phantomjs](https://github.com/boxen/puppet-phantomjs)
 
 ##### Applications
 
  * Install [Git Tower](http://www.git-tower.com/)
- * Install [TextMate](http://macromates.com/) and several bundles:
+ * Install [TextMate](http://macromates.com/) and several bundles: :shipit: [boxen/puppet-textmate](https://github.com/boxen/puppet-textmate)
    * The [RailsCasts TextMate Theme](http://railscasts.com/about)
    * The [CoffeeScript Bundle](https://github.com/jashkenas/coffee-script-tmbundle)
    * The [Cucumber Bundle](https://github.com/cucumber/cucumber-tmbundle)
    * The [Handlebars Bundle](https://github.com/drnic/Handlebars.tmbundle)
    * The [SCSS Bundle](https://github.com/kuroir/SCSS.tmbundle)
    * [PeepOpen](https://peepcode.com/products/peepopen)
- * Install [Jumpcut](http://jumpcut.sourceforge.net/) _for clipboard buffering_
- * Install [ImageOptim](http://imageoptim.com/) _for optimizing images for the web_
- * Install [GitX](https://github.com/boxen/puppet-gitx) _useful for viewing history_
+ * Install [Jumpcut](http://jumpcut.sourceforge.net/) _for clipboard buffering_ :shipit: [boxen/puppet-jumpcut](https://github.com/boxen/puppet-jumpcut)
+ * Install [ImageOptim](http://imageoptim.com/) _for optimizing images for the web_ :shipit: [webflo/imageoptim](https://github.com/webflo/puppet-imageoptim)
+ * Install [GitX](https://github.com/boxen/puppet-gitx) _useful for viewing history_ :shipit: [boxen/puppet-gitx](https://github.com/boxen/puppet-gitx)
+ * Install [Caffeine](http://lightheadsw.com/caffeine/) _useful when demoing_ :shipit: [boxen/puppet-caffeine](https://github.com/boxen/puppet-caffeine)
 
 ##### Browsers
 
- * Install [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
- * Install [Firefox](http://www.mozilla.org/en-US/firefox/new/) :shipit: ([boxen/puppet-firefox](https://github.com/boxen/puppet-firefox))
+ * Install [Google Chrome](https://www.google.com/intl/en/chrome/browser/) :shipit: [boxen/puppet-chrome](https://github.com/boxen/puppet-chrome)
+ * Install [Firefox](http://www.mozilla.org/en-US/firefox/new/) :shipit: [boxen/puppet-firefox](https://github.com/boxen/puppet-firefox)
 
 ##### Configuration
 
