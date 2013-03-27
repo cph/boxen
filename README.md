@@ -83,7 +83,7 @@ Here are the steps that Boxen should perform to setup an EP development environm
 ##### Browsers
 
  * Install [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
- * Install [Firefox](http://www.mozilla.org/en-US/firefox/new/)
+ * Install [Firefox](http://www.mozilla.org/en-US/firefox/new/) :shipit: ([boxen/puppet-firefox](https://github.com/boxen/puppet-firefox))
 
 ##### Configuration
 
