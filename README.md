@@ -1,18 +1,106 @@
-# Our Boxen
+# Boxen
 
-This is a template Boxen project designed for your organization to fork and
-modify appropriately.
-The Boxen rubygem and the Boxen puppet modules are only a framework for getting
-things done.
-This repository template is just a basic example of _how_ to do things with them.
+Boxen automates the configuration of MacBook Pros. Its purpose is:
+
+ * To make it fast and easy to get a new computer's development environment up and running.
+ * To ensure that all we're working with the same tools so that what works on Jesse's computer works on yours.
+
+
+### How it works
+
+Boxen uses [Puppet](https://puppetlabs.com/) (see [Getting Started with Puppet](https://github.com/concordia-publishing-house/boxen/blob/master/docs/puppet.md)) which is Ruby software for configuration management. Aspects of machine configuration are broken into modules. You can find quite a few at [github.com/boxen](https://github.com/boxen) and [github.com/puppetlabs](https://github.com/puppetlabs/puppet-postgresql). [puppetlabs/puppet-postgresql](https://github.com/puppetlabs/puppet-postgresql), for example, is a module for installing and configuring Postgres.
+
+This is a fork of GitHub's [Boxen](https://github.com/boxen/our-boxen). Currently, it comes with GitHub's default configuration:
+
+ * Homebrew
+ * Git
+ * Hub
+ * DNSMasq w/ .dev resolver for localhost
+ * NVM
+ * RBenv
+ * Full Disk Encryption requirement
+ * NodeJS 0.4
+ * NodeJS 0.6
+ * NodeJS 0.8
+ * Ruby 1.8.7
+ * Ruby 1.9.2
+ * Ruby 1.9.3
+ * Ack
+ * Findutils
+ * GNU-Tar
+
+
+
+
+## TODO: Make Boxen work for us
+
+Our requirements aren't identical with GitHub's. To begin using Boxen at CPH, we need to modify this project to represent our required configuration.
+
+Here are the steps that Boxen should perform to setup an EP development environment:
+
+##### Foundations
+
+ * Install [Homebrew](http://mxcl.github.com/homebrew/) :shipit: [boxen/puppet-homebrew](https://github.com/boxen/puppet-homebrew)
+ * Install [Git](http://git-scm.org/) :shipit: [boxen/puppet-git](https://github.com/boxen/puppet-git)
+
+##### Ruby
+
+ * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._ :x: _There are several on Github, none developed specifically for Boxen. The most active, [blt04/puppet-rvm](https://github.com/blt04/puppet-rvm), is specifically for installing system RVM (as root), which we do not want to do. Is there a lightweight way to run shell scripts with puppet? Installing RVM (and even the Rubies and Gems below) are simple one-liners when the requirements are met! [jfryman/puppet-rvm](https://github.com/jfryman/puppet-rvm) is promising: he works for GitHub. The others are: [fup/puppet-rvm](https://github.com/fup/puppet-rvm) and [rtyler/puppet-rvm](https://github.com/rtyler/puppet-rvm)._
+   * Install [Rubies](http://www.ruby-lang.org/en/)
+      * 1.9.3-p392
+      * 2.0.0-p0
+   * Install Gems _Most gems will be installed by bundler on behalf of the individual projects that require them. There are, however, a few global gems, not specified by Gemfiles, but required nonetheless_
+     * [Bundler](http://gembundler.com/) _For managing projects' dependencies_
+     * [Capistrano](http://capistranorb.com/) _For deploying_
+     * [rvm-capistrano](https://github.com/wayneeseguin/rvm-capistrano) _Because we deploy to servers that run RVM_
+     * [Powder](https://github.com/Rodreegez/powder) _Shortcuts for managing Pow_
+ * Install [Pow](http://pow.cx/) _Pow is used to run applications locally APPNAME.dev. This is useful when you need multiple applications running on your local computer in order to develop. For example, Unite relies on both Members (@ 360.dev) and Epic Auth (@ epic-auth.dev)._ :x:
+ 
+##### Databases
+
+ * Install [MySQL](http://dev.mysql.com/downloads/mysql/5.1.html#downloads) _I believe the version we run is 5.1_ :shipit: [boxen/puppet-mysql](https://github.com/boxen/puppet-mysql) _uses Homebrew_
+ * Install [Postgres](http://www.postgresql.org/download/macosx/) _I believe [Postgres.app](http://postgresapp.com/) is the best way of installing this_  :shipit: [boxen/puppet-postgresql](https://github.com/boxen/puppet-postgresql) _uses Homebrew to compile postgres, not Postgres.app..._
+ * Install [Redis](http://redis.io/) _for Resque_ :shipit: [boxen/puppet-redis](https://github.com/boxen/puppet-redis)
+
+##### Packages
+
+ * Install [ImageMagick](http://www.imagemagick.org/) _used by most apps that do any image resizing or processing_ :shipit: [boxen/puppet-imagemagick](https://github.com/boxen/puppet-imagemagick)
+ * Install [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to modify PDF metadata_ :x:
+ * Install [mdb-tools 0.7](https://github.com/brianb/mdbtools) _used by Members to import Shepherd's Staff data_ :x:
+ * Install [phantomjs](http://phantomjs.org/) _used to run integration tests headlessly_ :shipit: [boxen/puppet-phantomjs](https://github.com/boxen/puppet-phantomjs)
+
+##### Applications
+
+ * Install [Git Tower](http://www.git-tower.com/)
+ * Install [TextMate](http://macromates.com/) and several bundles: :shipit: [boxen/puppet-textmate](https://github.com/boxen/puppet-textmate)
+   * The [RailsCasts TextMate Theme](http://railscasts.com/about)
+   * The [CoffeeScript Bundle](https://github.com/jashkenas/coffee-script-tmbundle)
+   * The [Cucumber Bundle](https://github.com/cucumber/cucumber-tmbundle)
+   * The [Handlebars Bundle](https://github.com/drnic/Handlebars.tmbundle)
+   * The [SCSS Bundle](https://github.com/kuroir/SCSS.tmbundle)
+   * [PeepOpen](https://peepcode.com/products/peepopen)
+ * Install [Jumpcut](http://jumpcut.sourceforge.net/) _for clipboard buffering_ :shipit: [boxen/puppet-jumpcut](https://github.com/boxen/puppet-jumpcut)
+ * Install [ImageOptim](http://imageoptim.com/) _for optimizing images for the web_ :shipit: [webflo/imageoptim](https://github.com/webflo/puppet-imageoptim)
+ * Install [GitX](https://github.com/boxen/puppet-gitx) _useful for viewing history_ :shipit: [boxen/puppet-gitx](https://github.com/boxen/puppet-gitx)
+ * Install [Caffeine](http://lightheadsw.com/caffeine/) _useful when demoing_ :shipit: [boxen/puppet-caffeine](https://github.com/boxen/puppet-caffeine)
+
+##### Browsers
+
+ * Install [Google Chrome](https://www.google.com/intl/en/chrome/browser/) :shipit: [boxen/puppet-chrome](https://github.com/boxen/puppet-chrome)
+ * Install [Firefox](http://www.mozilla.org/en-US/firefox/new/) :shipit: [boxen/puppet-firefox](https://github.com/boxen/puppet-firefox)
+
+##### Configuration
+
+ * Clone the [EP toolchain](https://github.com/concordia-publishing-house/ep) to `~/.ep` and run `ep config all` _to write the locations of our various servers to_ `~/.ssh/config` _and various test domains to_ `/etc/hosts`.
+ * [Generate an SSH Key and add it your GitHub account](https://help.github.com/articles/generating-ssh-keys#platform-mac)
+
+
+
 
 ## Getting Started
 
-To give you a brief overview, we're going to:
 
-* Install dependencies (basically Xcode)
-* Bootstrap a boxen for your self/team/org/company
-* Then convert your local copy of that boxen to the post-bootstrapped version
+### Conflicts 
 
 There are a few potential conflicts to keep in mind.
 Boxen does its best not to get in the way of a dirty system,
@@ -22,12 +110,12 @@ and detect most of these and tell you anyway):
 
 * Boxen __requires__ at least the Xcode Command Line Tools installed.
 * Boxen __will not__ work with an existing rvm install.
-* Boxen __may not__ play nice with a GitHub username that includes dash(-)
 * Boxen __may not__ play nice with an existing rbenv install.
 * Boxen __may not__ play nice with an existing chruby install.
 * Boxen __may not__ play nice with an existing homebrew install.
 * Boxen __may not__ play nice with an existing nvm install.
 * Boxen __recommends__ installing the full Xcode.
+
 
 ### Dependencies
 
@@ -43,59 +131,30 @@ How do you do it?
 1. Go to the Downloads tab.
 1. Install the Command Line Tools.
 
-### Bootstrapping
 
-Create a **new** git repository somewhere.
-It can be private or public -- it really doesn't matter.
-If you're making a repository on GitHub, you _may not_ want to fork this repo
-to get started.
-The reason for that is that you can't really make private forks of public
-repositories easily.
+### Getting Boxen
 
-Once you've done that, you can run the following to bootstrap
-your boxen:
-
-```
+``` sh
 sudo mkdir -p /opt/boxen
-sudo chown ${USER}:staff /opt/boxen
-git clone https://github.com/boxen/our-boxen /opt/boxen/repo
-cd /opt/boxen/repo
-git remote rm origin
-git remote add origin <the location of my new git repository>
-git push -u origin master
+sudo chown ${USER}:admin /opt/boxen
+git clone git@github.com:concordia-publishing-house/boxen.git /opt/boxen/repo
 ```
 
-### Distributing
 
-That's enough to get your boxen into a usable state on other machines,
-usually.
-From there, we recommend setting up
-[boxen-web](https://github.com/boxen/boxen-web)
-as an easy way to automate letting other folks install your boxen.
+### Using Boxen
 
-If you _don't_ want to use boxen-web, folks can get using your boxen like so:
+Here's how to run Boxen on your laptop:
 
-```
-sudo mkdir -p /opt/boxen
-sudo chown ${USER}:staff /opt/boxen
-git clone <location of my new git repository> /opt/boxen/repo
+``` sh
 cd /opt/boxen/repo
 script/boxen
 ```
 
-Keep in mind this requires you to encrypt your hard drive by default.
-If you do not want to do encrypt your hard drive, you can use the `--no-fde`.
-
-```
-script/boxen --no-fde
-```
-
 It should run successfully, and should tell you to source a shell script
 in your environment.
+
 For users without a bash or zsh config or a `~/.profile` file,
-Boxen will create a shim for you that will work correctly.
-If you do have a `~/.bashrc` or `~/.zshrc`, your shell will not use
-`~/.profile` so you'll need to add a line like so at _the end of your config_:
+Boxen will add a line that looks like this to the file:
 
 ``` sh
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
@@ -105,76 +164,67 @@ Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
 
-## What You Get
 
-This template project provides the following by default:
 
-* Homebrew
-* Git
-* Hub
-* dnsmasq w/ .dev resolver for localhost
-* rbenv
-* Full Disk Encryption requirement
-* Node.js 0.4
-* Node.js 0.6
-* Node.js 0.8
-* Ruby 1.8.7
-* Ruby 1.9.2
-* Ruby 1.9.3
-* ack
-* Findutils
-* GNU tar
 
-## Customizing
+## Hacking on Boxen
 
-You can always check out the number of existing modules we already
-provide as optional installs under the
-[boxen organization](https://github.com/boxen). These modules are all
-tested to be compatible with Boxen. Use the `Puppetfile` to pull them
-in dependencies automatically whenever `boxen` is run.
 
-### Including boxen modules from github (boxen/puppet-<name>)
+### The Puppetfile
 
-You must add the github information for your added Puppet module into your Puppetfile at the root of your
-boxen repo (ex. /path/to/your-boxen/Puppetfile):
+You can add modules of configuration by editing the `Puppetfile` much
+as you would a `Gemfile`. The `Puppetfile` tells Boxen where to find the
+modules.
 
-    # Core modules for a basic development environment. You can replace
-    # some/most of these if you want, but it's not recommended.
+It seems that you can use an Puppet modules, but the modules at
+[github.com/boxen](https://github.com/boxen) have all been tested to be
+compatible with Boxen.
 
-    github "repository", "2.0.2"
-    github "dnsmasq",    "1.0.0"
-    github "gcc",        "1.0.0"
-    github "git",        "1.2.2"
-    github "homebrew",   "1.1.2"
-    github "hub",        "1.0.0"
-    github "inifile",    "0.9.0", :repo => "cprice404/puppetlabs-inifile"
-    github "nginx",      "1.4.0"
-    github "nodejs",     "2.2.0"
-    github "ruby",       "4.1.0"
-    github "stdlib",     "4.0.2", :repo => "puppetlabs/puppetlabs-stdlib"
-    github "sudo",       "1.0.0"
+Here's a sample `Puppetfile`:
 
-    # Optional/custom modules. There are tons available at
-    # https://github.com/boxen.
+``` ruby
+# Core modules for a basic development environment.
 
-    github "java",     "1.1.0"
+github "dnsmasq",  "1.0.0"
+github "gcc",      "1.0.0"
+github "git",      "1.0.0"
+github "homebrew", "1.0.0"
+github "hub",      "1.0.0"
+github "inifile",  "0.9.0", :repo => "cprice-puppet/puppetlabs-inifile"
+github "nginx",    "1.0.0"
+github "nodejs",   "1.0.0"
+github "nvm",      "1.0.0"
+github "ruby",     "1.0.0"
+github "stdlib",   "3.0.0", :repo => "puppetlabs/puppetlabs-stdlib"
+github "sudo",     "1.0.0"
+
+# Optional/custom modules. There are tons available at
+# https://github.com/boxen.
+
+github "java",     "1.0.5"
+```
 
 In the above snippet of a customized Puppetfile, the bottom line
-includes the Java module from Github using the tag "1.1.0" from the github repository
+includes the Java module from Github using the tag "1.0.5" from the github repository
 "boxen/puppet-java".  The function "github" is defined at the top of the Puppetfile
 and takes the name of the module, the version, and optional repo location:
 
-    def github(name, version, options = nil)
-      options ||= {}
-      options[:repo] ||= "boxen/puppet-#{name}"
-      mod name, version, :github_tarball => options[:repo]
-    end
+``` ruby
+def github(name, version, options = nil)
+  options ||= {}
+  options[:repo] ||= "boxen/puppet-#{name}"
+  mod name, version, :github_tarball => options[:repo]
+end
+```
 
-Now Puppet knows where to download the module from when you include it in your site.pp or mypersonal.pp file:
+Finally, you can now include the optional module in your site.pp or mypersonal.pp file like this:
 
-    # include the java module referenced in my Puppetfile with the line
-    # github "java",     "1.1.0"
-    include java
+``` puppet
+# include the java module referenced in my Puppetfile with the line
+# github "java",     "1.0.5"
+include java
+```
+
 
 ### Node definitions
 
@@ -193,6 +243,7 @@ node default {
   # more...
 }
 ```
+
 
 ### How Boxen interacts with Puppet
 
@@ -217,16 +268,17 @@ everyone by default. An example of this might look like so:
 
    include projects::super-top-secret-project
  }
- ```
+```
 
- If you'd like to read more about how Puppet works, we recommend
- checking out [the official documentation](http://docs.puppetlabs.com/)
- for:
+If you'd like to read more about how Puppet works, we recommend
+checking out [the official documentation](http://docs.puppetlabs.com/)
+for:
 
  * [Modules](http://docs.puppetlabs.com/learning/modules1.html#modules)
  * [Classes](http://docs.puppetlabs.com/learning/modules1.html#classes)
  * [Defined Types](http://docs.puppetlabs.com/learning/definedtypes.html)
  * [Facts](http://docs.puppetlabs.com/guides/custom_facts.html)
+
 
 ### Creating a personal module
 
@@ -235,6 +287,7 @@ See [the documentation in the
 directory for creating per-user modules that don't need to be applied
 globally to everyone.
 
+
 ### Creating a project module
 
 See [the documentation in the
@@ -242,31 +295,26 @@ See [the documentation in the
 directory for creating organization projects (i.e., repositories that people
 will be working in).
 
-## Binary packages
 
-We support binary packaging for everything in Homebrew, rbenv, and nvm.
-See `config/boxen.rb` for the environment variables to define.
 
-## Sharing Boxen Modules
 
-If you've got a Boxen module you'd like to be grouped under the Boxen org,
-(so it can easily be found by others), please file an issue on this
-repository with a link to your module.
-We'll review the code briefly, and if things look pretty all right,
-we'll fork it under the Boxen org and give you read+write access to our
-fork.
-You'll still be the maintainer, you'll still own the issues and PRs.
-It'll just be listed under the boxen org so folks can find it more easily.
+## The Plan
 
-## Integrating with Github Enterprise
+The plan is to customize Boxen to automatically configure our development environment,
+find the modules we need to install the components we need or creating modules for
+tools we can't find.
 
-If you're using a Github Enterprise instance rather than github.com,
-you will need to set the `BOXEN_GITHUB_ENTERPRISE_URL` and
-`BOXEN_REPO_URL_TEMPLATE` variables in your
-[Boxen config](config/boxen.rb).
+When we've finished setting Boxen up (using Kendall's laptop as a guinea pig),
+we'll run it on all of our laptops and standardize our environment.
 
-## Halp!
+If we've created any modules, we'll share them with the Boxen organization by
+filing an issue on [this repo](https://github.com/boxen/our-boxen) and linking to the module.
 
-See [FAQ](https://github.com/boxen/our-boxen/blob/master/docs/faq.md).
+Finally, we'll set up [Boxen Web](https://github.com/boxen/boxen-web) on a VM
+and use it to synchronize our configuration.
+
+
+
+### Help
 
 Use Issues or #boxen on irc.freenode.net.
