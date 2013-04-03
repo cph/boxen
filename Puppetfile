@@ -36,7 +36,7 @@ github "sudo",     "1.0.0"
 
 github "mysql",          "1.0.1"
 github "sysctl",		 "1.0.0"
-github "postgresql",     "1.0.0"
+#github "postgresql",     "1.0.0", :repo => "boxen/puppet-postgresql"
 #github "redis",          "1.0.0"
 #github "imagemagick",    "1.0.0"
 #github "phantomjs",      "1.2.0"
