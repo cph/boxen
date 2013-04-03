@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: AquaGeek/puppet-textmate2
+  specs:
+    textmate (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-autoconf
   specs:
     autoconf (1.0.0)
@@ -9,9 +14,24 @@ GITHUBTARBALL
     boxen (3.0.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-caffeine
+  specs:
+    caffeine (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-firefox
+  specs:
+    firefox (1.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-gcc
@@ -24,6 +44,11 @@ GITHUBTARBALL
     git (1.2.5)
 
 GITHUBTARBALL
+  remote: boxen/puppet-gitx
+  specs:
+    gitx (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.4.1)
@@ -32,6 +57,31 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.0.3)
+
+GITHUBTARBALL
+  remote: boxen/puppet-imagemagick
+  specs:
+    imagemagick (1.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-iterm2
+  specs:
+    iterm2 (1.0.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-jumpcut
+  specs:
+    jumpcut (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-libtool
+  specs:
+    libtool (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mysql
+  specs:
+    mysql (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -49,6 +99,26 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-phantomjs
+  specs:
+    phantomjs (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-pkgconfig
+  specs:
+    pkgconfig (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-pow
+  specs:
+    pow (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-repository
   specs:
     repository (2.2.0)
@@ -59,14 +129,49 @@ GITHUBTARBALL
     ruby (6.3.4)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sublime_text_2
+  specs:
+    sublime_text_2 (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sysctl
+  specs:
+    sysctl (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.1.0)
+
+GITHUBTARBALL
+  remote: burke/puppet-automake
+  specs:
+    automake (1.0.1)
+
+GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-mdbtools
+  specs:
+    mdbtools (1.0.0)
+
+GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-pdftk
+  specs:
+    pdftk (1.1.0)
+
+GITHUBTARBALL
+  remote: kevinSuttle/puppet-git_tower
+  specs:
+    git_tower (1.0.0)
+
+GITHUBTARBALL
+  remote: lixef/puppet-postgresapp
+  specs:
+    postgresapp (1.0.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -78,21 +183,48 @@ GITHUBTARBALL
   specs:
     stdlib (4.1.0)
 
+GITHUBTARBALL
+  remote: webflo/puppet-imageoptim
+  specs:
+    imageoptim (0.0.2)
+
 DEPENDENCIES
   autoconf (= 1.0.0)
+  automake (= 1.0.1)
   boxen (= 3.0.2)
+  caffeine (= 1.0.0)
+  chrome (= 1.1.0)
   dnsmasq (= 1.0.0)
+  firefox (= 1.0.5)
   gcc (= 2.0.1)
   git (= 1.2.5)
+  git_tower (= 1.0.0)
+  gitx (= 1.2.0)
   homebrew (= 1.4.1)
   hub (= 1.0.3)
+  imagemagick (= 1.2.0)
+  imageoptim (= 0.0.2)
   inifile (= 1.0.0)
+  iterm2 (= 1.0.2)
+  jumpcut (= 1.0.0)
+  libtool (= 1.0.0)
+  mdbtools (= 1.0.0)
+  mysql (= 1.0.1)
   nginx (= 1.4.2)
   nodejs (= 3.2.9)
   openssl (= 1.0.0)
+  pdftk (= 1.1.0)
+  phantomjs (= 1.0.0)
+  pkgconfig (= 1.0.0)
+  postgresapp (= 1.0.0)
+  pow (= 1.0.0)
+  redis (= 1.0.0)
   repository (= 2.2.0)
   ruby (= 6.3.4)
   stdlib (= 4.1.0)
+  sublime_text_2 (= 1.1.0)
   sudo (= 1.0.0)
+  sysctl (= 1.0.0)
+  textmate (= 1.1.0)
   xquartz (= 1.1.0)
 
