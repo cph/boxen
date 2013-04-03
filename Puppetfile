@@ -33,3 +33,19 @@ github "sudo",     "1.0.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "mysql",          "1.0.1"
+github "sysctl",		 "1.0.0"
+github "postgresql",     "1.0.0"
+#github "redis",          "1.0.0"
+#github "imagemagick",    "1.0.0"
+#github "phantomjs",      "1.2.0"
+#github "textmate",       "1.1.0"
+#github "sublime_text_2", "1.1.0"
+#github "jumpcut",        "1.0.0"
+#github "imageoptim",     "0.0.2", :repo => "webflo/imageoptim"
+#github "gitx",           "1.2.0"
+#github "firefox",        "1.0.5"
+#github "chrome",         "1.1.0"
+#github "caffeine",       "1.0.0"
+
