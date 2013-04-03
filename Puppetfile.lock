@@ -1,12 +1,32 @@
 GITHUBTARBALL
+  remote: AquaGeek/puppet-textmate2
+  specs:
+    textmate (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-caffeine
+  specs:
+    caffeine (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-firefox
+  specs:
+    firefox (1.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-gcc
@@ -19,6 +39,11 @@ GITHUBTARBALL
     git (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-gitx
+  specs:
+    gitx (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.1.2)
@@ -27,6 +52,16 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-imagemagick
+  specs:
+    imagemagick (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-jumpcut
+  specs:
+    jumpcut (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-mysql
@@ -49,9 +84,24 @@ GITHUBTARBALL
     nvm (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-phantomjs
+  specs:
+    phantomjs (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-ruby
   specs:
     ruby (3.3.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-sublime_text_2
+  specs:
+    sublime_text_2 (1.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-sudo
@@ -64,29 +114,69 @@ GITHUBTARBALL
     sysctl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-xquartz
+  specs:
+    xquartz (1.0.0)
+
+GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
   specs:
     inifile (0.9.0)
+
+GITHUBTARBALL
+  remote: kevinSuttle/puppet-git_tower
+  specs:
+    git_tower (1.0.0)
+
+GITHUBTARBALL
+  remote: lixef/puppet-postgresapp
+  specs:
+    postgresapp (1.0.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
     stdlib (3.0.0)
 
+GITHUBTARBALL
+  remote: redbubble/puppet-pow
+  specs:
+    pow (0.1.0)
+
+GITHUBTARBALL
+  remote: webflo/puppet-imageoptim
+  specs:
+    imageoptim (0.0.2)
+
 DEPENDENCIES
   boxen (= 1.2.0)
+  caffeine (= 1.0.0)
+  chrome (= 1.1.0)
   dnsmasq (= 1.0.0)
+  firefox (= 1.0.5)
   gcc (= 1.0.0)
   git (= 1.0.0)
+  git_tower (= 1.0.0)
+  gitx (= 1.2.0)
   homebrew (= 1.1.2)
   hub (= 1.0.0)
+  imagemagick (= 1.0.0)
+  imageoptim (= 0.0.2)
   inifile (= 0.9.0)
+  jumpcut (= 1.0.0)
   mysql (= 1.0.1)
   nginx (= 1.1.0)
   nodejs (= 1.0.0)
   nvm (= 1.0.0)
+  phantomjs (= 1.0.0)
+  postgresapp (= 1.0.0)
+  pow (= 0.1.0)
+  redis (= 1.0.0)
   ruby (= 3.3.1)
   stdlib (= 3.0.0)
+  sublime_text_2 (= 1.1.0)
   sudo (= 1.0.0)
   sysctl (= 1.0.0)
+  textmate (= 1.1.0)
+  xquartz (= 1.0.0)
 
