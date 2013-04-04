@@ -67,9 +67,7 @@ node default {
   include nodejs::0-8
 
   # default ruby versions
-  include ruby::1_8_7
-  include ruby::1_9_2
-  include ruby::1_9_3
+  include ruby::1_9_3_p392
   include ruby::2_0_0
 
   # common, useful packages
@@ -86,23 +84,5 @@ node default {
     target => $boxen::config::repodir
   }
 
-  # CPH defaults
-  include mysql # TODO: custom root db setup, prolly need to fork puppet-mysql
-  include sysctl
-  include redis
-  include xquartz
-  include imagemagick
-  include phantomjs
-  include jumpcut
-  include imageoptim
-  include gitx
-  include git_tower
-  include firefox
-  include chrome
-  include caffeine
-  include postgresapp
-  include pow
-  include textmate
-  include sublime_text_2
-
+  include ep::default
 }
