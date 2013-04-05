@@ -34,12 +34,29 @@ class ep::default {
     "capistrano for ${version}":
     gem     => 'capistrano',
     ruby    => $version,
-    version => '~> 2.14.2';
+    version => '2.14.2';
 
     "rvm-capistrano for ${version}":
     gem     => 'rvm-capistrano',
     ruby    => $version,
-    version => '~> 1.2.7'
+    version => '1.2.7';
+
+    "powder for ${verson}":
+    gem     => 'powder',
+    ruby    => $version,
+    version => '0.2.0';    
   }
+
+  # Git bash completion
+  class bash-completion {
+    homebrew::formula {
+      'bash-completion': ;
+    }
+
+    package { 'boxen/brews/bash-completion':
+      ensure => '0.4.2';
+    }
+  }
+
 }
 
