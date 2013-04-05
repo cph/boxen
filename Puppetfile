@@ -51,4 +51,5 @@ github "chrome",         "1.1.0"
 github "caffeine",       "1.0.0"
 github "postgresapp",    "1.0.0", :repo => "lixef/puppet-postgresapp"
 github "pow",            "0.1.0", :repo => "redbubble/puppet-pow"
+github "iterm2",         "1.0.2", :repo => "boxen/puppet-iterm2"
 
