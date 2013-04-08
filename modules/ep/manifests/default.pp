@@ -45,6 +45,11 @@ class ep::default {
     gem     => 'powder',
     ruby    => $version,
     version => '0.2.0';
+
+    "faraday for ${version}":
+    gem     => 'faraday',
+    ruby    => $version,
+    version => '0.8.2';
   }
 
   # Git bash completion
