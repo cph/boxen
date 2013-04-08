@@ -1,5 +1,5 @@
 class people::kendallpark {
-  include postgresapp
+  #include postgresapp
 
   $home     = "/Users/${::luser}"
   $my       = "${home}/my"
