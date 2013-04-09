@@ -164,7 +164,14 @@ Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
 
+Due to issues with switching the default version of Ruby you'll have to `bundle install` then run `boxen` again.
 
+``` sh
+bundle install
+boxen
+```
+
+This should get all the default rubygems installed.
 
 
 ## Hacking on Boxen
