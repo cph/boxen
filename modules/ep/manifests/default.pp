@@ -26,7 +26,8 @@ class ep::default {
   #include iterm2::stable
 
   class { 'ruby::global':
-    version => '1.9.3-p392'
+    version => '1.9.3-p392',
+    before  => Exec['run bundler'],
   }
 
   exec { 'run bundler':
@@ -35,6 +36,7 @@ class ep::default {
 
   ruby::gem { 
     "bundler for ${version}":
+    #before  => Exec['run bundler'],
     gem     => 'bundler',
     ruby    => $version,
     version => '1.3.0';
