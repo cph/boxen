@@ -4,7 +4,8 @@ class ep::default {
 
   $profile = "/Users/${::luser}/.profile"
   $bash_completion = "# git bash completion via boxen\nif [ -f /opt/boxen/homebrew/etc/bash_completion ]; then\n. /opt/boxen/homebrew/etc/bash_completion\nfi"
-  
+  $version = "1.9.3-p392"
+
   # CPH defaults
   #include mysql # TODO: custom root db setup, prolly need to fork puppet-mysql
   #include sysctl
@@ -26,13 +27,13 @@ class ep::default {
   #include iterm2::stable
 
   class { 'ruby::global':
-    version => '1.9.3-p392',
-    before  => Exec['run bundler'],
+    version => $version,
+    #before  => Exec['run bundler'],
   }
 
-  exec { 'run bundler':
-    command => "bundle install",
-  }
+  #exec { 'run bundler':
+  #  command => "bundle install",
+  #}
 
   ruby::gem { 
     "bundler for ${version}":
