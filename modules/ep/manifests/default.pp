@@ -1,5 +1,9 @@
 class ep::default {
   notify { 'installing ep stuff': }
+  require boxen::config
+
+  $profile = "/Users/${::luser}/.profile"
+  $bash_completion = "# git bash completion via boxen\nif [ -f /opt/boxen/homebrew/etc/bash_completion ]; then\n. /opt/boxen/homebrew/etc/bash_completion\nfi"
   
   # CPH defaults
   #include mysql # TODO: custom root db setup, prolly need to fork puppet-mysql
@@ -23,6 +27,10 @@ class ep::default {
 
   class { 'ruby::global':
     version => '1.9.3-p392'
+  }
+
+  exec { 'run bundler':
+    command => "bundle install",
   }
 
   ruby::gem { 
@@ -52,15 +60,19 @@ class ep::default {
     version => '0.8.2';
   }
 
-  # Git bash completion
-  class bash-completion {
-    homebrew::formula {
-      'bash-completion': ;
-    }
+  package { 'bash-completion':
+    ensure => installed,
+    provider => homebrew,
+  }
 
-    package { 'boxen/brews/bash-completion':
-      ensure => '0.4.2';
-    }
+  file { "/Users/${::luser}/.profile":
+    ensure => present,
+  }
+
+  exec { 'add bash-completion to .profile':
+    path => "/bin:/usr/bin",
+    command => "echo '\n\n${bash_completion}' >> ${profile}",
+    unless => "grep -c 'bash completion' ${profile}",
   }
 
 }
