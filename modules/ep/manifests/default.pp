@@ -22,11 +22,15 @@ class ep::default {
   #include caffeine
   #include postgresapp
   include pow
-  include repository
+  #include repository
   #include pdftk
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
+  include autoconf
+  include automake
+  include libtool
+  include libffi
 
   class { 'ruby::global':
     version => $version,
@@ -74,5 +78,30 @@ class ep::default {
     unless => "grep -c 'bash completion' ${profile}",
   }
 
+  /*
+  package { 'glib':
+    ensure => installed,
+    provider => homebrew,
+  }
+
+  $mdbtools_path = "/opt/boxen/mdbtools"
+
+  repository { 'mdbtools repo':
+    source   => 'brianb/mdbtools',
+    provider => 'git',
+    path     => $mdbtools_path,
+  }
+
+  exec { 'install mdbtools':
+    command => 'sh autogen.sh && make && make install',
+    cwd     => $mdbtools_path
+  }
+
+  exec { 'ldconfig':
+    command => 'ldconfig'
+  }
+
+  Package['glib'] -> Repository['mdbtools repo'] -> Exec['install mdbtools'] -> Exec['ldconfig']
+  */
 }
 
