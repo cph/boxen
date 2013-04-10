@@ -30,7 +30,7 @@ class ep::default {
   include autoconf
   include automake
   include libtool
-  include libffi
+  #include libffi
 
   class { 'ruby::global':
     version => $version,
