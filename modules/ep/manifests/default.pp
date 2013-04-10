@@ -22,26 +22,17 @@ class ep::default {
   #include caffeine
   #include postgresapp
   include pow
+  include repository
+  #include pdftk
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
 
   class { 'ruby::global':
     version => $version,
-    #before  => Exec['run bundler'],
   }
 
-  #exec { 'run bundler':
-  #  command => "bundle install",
-  #}
-
   ruby::gem { 
-    "bundler for ${version}":
-    #before  => Exec['run bundler'],
-    gem     => 'bundler',
-    ruby    => $version,
-    version => '1.3.0';
-
     "capistrano for ${version}":
     gem     => 'capistrano',
     ruby    => $version,
@@ -67,6 +58,11 @@ class ep::default {
     ensure => installed,
     provider => homebrew,
   }
+
+  #package { 'mdbtools':
+  #  ensure => installed,
+  #  provider => homebrew,
+  #}
 
   file { "/Users/${::luser}/.profile":
     ensure => present,
