@@ -1,6 +1,7 @@
 class ep::default {
   notify { 'installing ep stuff': }
   require boxen::config
+  require homebrew
 
   $profile = "/Users/${::luser}/.profile"
   $bash_completion = "# git bash completion via boxen\nif [ -f /opt/boxen/homebrew/etc/bash_completion ]; then\n. /opt/boxen/homebrew/etc/bash_completion\nfi"
@@ -77,6 +78,8 @@ class ep::default {
     unless => "grep -c 'bash completion' ${profile}",
   }
 
+  /*
+
   exec { "install glib":
     command => "brew boxen-install glib",
     before => Package["mdbtools"],
@@ -86,6 +89,7 @@ class ep::default {
     ensure => installed,
     provider => homebrew,
   }
+  */
 
   #package { 'pdftk': 
   #  ensure => installed,

@@ -79,6 +79,11 @@ GITHUBTARBALL
     libffi (1.0.0)
 
 GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-pdftk
+  specs:
+    pdftk (1.1.0)
+
+GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
   specs:
     inifile (0.9.0)
@@ -108,6 +113,7 @@ DEPENDENCIES
   nginx (= 1.1.0)
   nodejs (= 1.0.0)
   nvm (= 1.0.0)
+  pdftk (= 1.1.0)
   pow (= 0.1.0)
   repository (= 2.0.0)
   ruby (= 3.3.1)
