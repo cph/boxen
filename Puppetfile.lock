@@ -34,11 +34,6 @@ GITHUBTARBALL
     hub (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-libtool
-  specs:
-    libtool (1.0.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-nginx
   specs:
     nginx (1.1.0)
@@ -74,11 +69,6 @@ GITHUBTARBALL
     automake (1.0.1)
 
 GITHUBTARBALL
-  remote: concordia-publishing-house/puppet-libffi
-  specs:
-    libffi (1.0.0)
-
-GITHUBTARBALL
   remote: concordia-publishing-house/puppet-pdftk
   specs:
     pdftk (1.1.0)
@@ -108,8 +98,6 @@ DEPENDENCIES
   homebrew (= 1.1.2)
   hub (= 1.0.0)
   inifile (= 0.9.0)
-  libffi (= 1.0.0)
-  libtool (= 1.0.0)
   nginx (= 1.1.0)
   nodejs (= 1.0.0)
   nvm (= 1.0.0)

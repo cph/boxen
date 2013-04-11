@@ -2,6 +2,7 @@ class ep::default {
   notify { 'installing ep stuff': }
   require boxen::config
   require homebrew
+  require ruby
 
   $profile = "/Users/${::luser}/.profile"
   $bash_completion = "# git bash completion via boxen\nif [ -f /opt/boxen/homebrew/etc/bash_completion ]; then\n. /opt/boxen/homebrew/etc/bash_completion\nfi"
@@ -25,12 +26,13 @@ class ep::default {
   include pow
   #include repository
   include pdftk
+  include mdbtools
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
-  #include autoconf
-  #include automake
-  #include libtool
+  include autoconf
+  include automake
+  include libffi
 
   class { 'ruby::global':
     version => $version,
