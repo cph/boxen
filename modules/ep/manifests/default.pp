@@ -23,14 +23,13 @@ class ep::default {
   #include postgresapp
   include pow
   #include repository
-  #include pdftk
+  include pdftk
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
-  include autoconf
-  include automake
-  include libtool
-  #include libffi
+  #include autoconf
+  #include automake
+  #include libtool
 
   class { 'ruby::global':
     version => $version,
@@ -78,42 +77,9 @@ class ep::default {
     unless => "grep -c 'bash completion' ${profile}",
   }
 
-  /*
-
-  $libffi_path = '/opt/boxen/libffi'
-  $libffi_version = 'v3.0.13'
-  $libffi_prefix = '/opt/boxen'
-  $make_notify = undef
-
-  repository { 'libffi repo':
-    source => 'atgreen/libffi',
-    provider => 'git',
-    path => $libffi_path,
-  }
-
-  exec { 'checkout libffi':
-    command => "git reset --hard && git checkout -b '${libffi_version}' '${libffi_version}'",
-    cwd     => $libffi_path,
-    before => Exec["install libffi"],
-    unless => "git branch | grep -c '* ${libffi_version}'",
-  }
-
-  exec { "install libffi":
-    command  => "${libffi_path}/configure --prefix=${libffi_path} --disable-static --enable-debug && make && make check && make install && echo ${libffi_version} > ${libffi_path}/.version",
-    unless   => "grep -c ${libffi_version} ${libffi_path}/.version",
-    before   => Exec["add installed libffi files to git repo"],
-  }
-
-  exec {"add installed libffi files to git repo":
-    command => "git add .",
-    cwd     => $libffi_path,
-  }
-  */
-
-  
-  package { 'glib':
-    ensure => installed,
-    provider => homebrew,
+  exec { "install glib":
+    command => "brew boxen-install glib",
+    before => Package["mdbtools"],
   }
 
   package { 'mdbtools':
@@ -121,26 +87,13 @@ class ep::default {
     provider => homebrew,
   }
 
-  /*
+  #package { 'pdftk': 
+  #  ensure => installed,
+  #  source => 'http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-1.44-osx10.6.dmg',
+  #  provider => pkgdmg,
+  #}
 
-  $mdbtools_path = "/opt/boxen/mdbtools"
 
-  repository { 'mdbtools repo':
-    source   => 'brianb/mdbtools',
-    provider => 'git',
-    path     => $mdbtools_path,
-  }
 
-  exec { 'install mdbtools':
-    command => 'sh autogen.sh && make && make install',
-    cwd     => $mdbtools_path
-  }
-
-  exec { 'ldconfig':
-    command => 'ldconfig'
-  }
-
-  Package['glib'] -> Repository['mdbtools repo'] -> Exec['install mdbtools'] -> Exec['ldconfig']
-  */
 }
 
