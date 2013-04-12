@@ -64,9 +64,24 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-xquartz
+  specs:
+    xquartz (1.1.0)
+
+GITHUBTARBALL
   remote: burke/puppet-automake
   specs:
     automake (1.0.1)
+
+GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-libffi
+  specs:
+    libffi (1.0.1)
+
+GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-mdbtools
+  specs:
+    mdbtools (1.0.1)
 
 GITHUBTARBALL
   remote: concordia-publishing-house/puppet-pdftk
@@ -98,6 +113,8 @@ DEPENDENCIES
   homebrew (= 1.1.2)
   hub (= 1.0.0)
   inifile (= 0.9.0)
+  libffi (= 1.0.1)
+  mdbtools (= 1.0.1)
   nginx (= 1.1.0)
   nodejs (= 1.0.0)
   nvm (= 1.0.0)
@@ -107,4 +124,5 @@ DEPENDENCIES
   ruby (= 3.3.1)
   stdlib (= 3.0.0)
   sudo (= 1.0.0)
+  xquartz (= 1.1.0)
 
