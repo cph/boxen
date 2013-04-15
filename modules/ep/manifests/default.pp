@@ -26,8 +26,8 @@ class ep::default {
   include pow
   #include repository
   include pdftk
-  include libffi
-  include mdbtools
+  #include libffi
+  #include mdbtools
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
@@ -101,18 +101,19 @@ class ep::default {
     unless => "grep -c 'source ~/.profile' ${bash_profile}",
   }
 
-  /*
+  
 
   exec { "install glib":
     command => "brew boxen-install glib",
-    before => Package["mdbtools"],
+    before  => Package["mdbtools"],
+    cwd     => "/Users/${::luser}",
   }
 
   package { 'mdbtools':
     ensure => installed,
     provider => homebrew,
   }
-  */
+  
 
   #package { 'pdftk': 
   #  ensure => installed,
