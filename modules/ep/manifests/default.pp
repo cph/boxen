@@ -27,7 +27,7 @@ class ep::default {
   #include repository
   include pdftk
   #include libffi
-  #include mdbtools
+  include mdbtools
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
@@ -102,7 +102,7 @@ class ep::default {
   }
 
   
-
+  /*
   exec { "install glib":
     command => "brew boxen-install glib",
     before  => Package["mdbtools"],
@@ -113,13 +113,15 @@ class ep::default {
     ensure => installed,
     provider => homebrew,
   }
-  
+  *?
+  */
 
   #package { 'pdftk': 
   #  ensure => installed,
   #  source => 'http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-1.44-osx10.6.dmg',
   #  provider => pkgdmg,
   #}
+  
 
 
 
