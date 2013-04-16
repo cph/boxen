@@ -27,12 +27,12 @@ class ep::default {
   #include repository
   include pdftk
   #include libffi
-  include mdbtools
   #include textmate
   #include sublime_text_2
   #include iterm2::stable
   include autoconf
   include automake
+  include mdbtools
 
   class { 'ruby::global':
     version => $version,
