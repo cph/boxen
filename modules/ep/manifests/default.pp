@@ -9,30 +9,29 @@ class ep::default {
   $version = "1.9.3-p392"
 
   # CPH defaults
-  #include mysql # TODO: custom root db setup, prolly need to fork puppet-mysql
-  #include sysctl
-  #include redis
+  include mysql
+  include sysctl
+  include redis
   include xquartz
-  #include imagemagick
-  #include phantomjs
-  #include jumpcut
-  #include imageoptim
-  #include gitx
-  #include git_tower
-  #include firefox
-  #include chrome
-  #include caffeine
-  #include postgresapp
+  include imagemagick
+  include phantomjs
+  include jumpcut
+  include imageoptim
+  include gitx
+  include git_tower
+  include firefox
+  include chrome
+  include caffeine
+  include postgresapp
   include pow
   #include repository
   include pdftk
-  #include libffi
-  #include textmate
-  #include sublime_text_2
-  #include iterm2::stable
+  include textmate
+  include sublime_text_2
+  include iterm2::stable
   include autoconf
   include automake
-  include mdbtools
+  #include mdbtools
 
   class { 'ruby::global':
     version => $version,
@@ -70,11 +69,6 @@ class ep::default {
     ensure => installed,
     provider => homebrew,
   }
-
-  #package { 'mdbtools':
-  #  ensure => installed,
-  #  provider => homebrew,
-  #}
 
   file { "${profile}":
     ensure => present,
@@ -115,14 +109,6 @@ class ep::default {
   }
   *?
   */
-
-  #package { 'pdftk': 
-  #  ensure => installed,
-  #  source => 'http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-1.44-osx10.6.dmg',
-  #  provider => pkgdmg,
-  #}
-  
-
 
 
 }
