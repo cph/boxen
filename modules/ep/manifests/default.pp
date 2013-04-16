@@ -13,6 +13,7 @@ class ep::default {
   include sysctl
   include redis
   include xquartz
+  include pkgconfig
   include imagemagick
   include phantomjs
   include jumpcut

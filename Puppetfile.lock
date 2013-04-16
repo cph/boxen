@@ -104,6 +104,11 @@ GITHUBTARBALL
     phantomjs (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-pkgconfig
+  specs:
+    pkgconfig (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-redis
   specs:
     redis (1.0.0)
@@ -204,6 +209,7 @@ DEPENDENCIES
   nvm (= 1.0.0)
   pdftk (= 1.1.0)
   phantomjs (= 1.0.0)
+  pkgconfig (= 1.0.0)
   postgresapp (= 1.0.0)
   pow (= 0.1.0)
   redis (= 1.0.0)
