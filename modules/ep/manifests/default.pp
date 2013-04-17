@@ -1,5 +1,5 @@
 class ep::default {
-  notify { 'installing ep stuff': }
+  notify { 'installing default ep stuff': }
   require boxen::config
   require homebrew
   require ruby
@@ -9,29 +9,29 @@ class ep::default {
   $version = "1.9.3-p392"
 
   # CPH defaults
-  include mysql
-  include sysctl
-  include redis
-  include xquartz
-  include pkgconfig
-  include imagemagick
-  include phantomjs
-  include jumpcut
-  include imageoptim
-  include gitx
-  include git_tower
-  include firefox
-  include chrome
-  include caffeine
-  include postgresapp
-  include pow
+  #include mysql
+  #include sysctl
+  #include redis
+  #include xquartz
+  #include pkgconfig
+  # include imagemagick
+  #include phantomjs
+  #include jumpcut
+  #include imageoptim
+  #include gitx
+  #include git_tower
+  #include firefox
+  #include chrome
+  # include caffeine
+  # include postgresapp
+  # include pow
   #include repository
-  include pdftk
+  # include pdftk
   include textmate
-  include sublime_text_2
-  include iterm2::stable
-  include autoconf
-  include automake
+  # include sublime_text_2
+  # include iterm2::stable
+  # include autoconf
+  # include automake
   #include mdbtools
 
   class { 'ruby::global':
@@ -110,6 +110,7 @@ class ep::default {
   }
   *?
   */
+  include ep::tmbundles
 
 
 }
