@@ -5,100 +5,86 @@ Boxen automates the configuration of MacBook Pros. Its purpose is:
  * To make it fast and easy to get a new computer's development environment up and running.
  * To ensure that all we're working with the same tools so that what works on Jesse's computer works on yours.
 
+This is a fork of GitHub's [Boxen](https://github.com/boxen/our-boxen).
+
 
 ### How it works
 
 Boxen uses [Puppet](https://puppetlabs.com/) (see [Getting Started with Puppet](https://github.com/concordia-publishing-house/boxen/blob/master/docs/puppet.md)) which is Ruby software for configuration management. Aspects of machine configuration are broken into modules. You can find quite a few at [github.com/boxen](https://github.com/boxen) and [github.com/puppetlabs](https://github.com/puppetlabs/puppet-postgresql). [puppetlabs/puppet-postgresql](https://github.com/puppetlabs/puppet-postgresql), for example, is a module for installing and configuring Postgres.
 
-This is a fork of GitHub's [Boxen](https://github.com/boxen/our-boxen). Currently, it comes with GitHub's default configuration:
 
- * Homebrew
- * Git
- * Hub
- * DNSMasq w/ .dev resolver for localhost
- * NVM
- * RBenv
- * Full Disk Encryption requirement
- * NodeJS 0.4
- * NodeJS 0.6
- * NodeJS 0.8
- * Ruby 1.8.7
- * Ruby 1.9.2
- * Ruby 1.9.3
- * Ack
- * Findutils
- * GNU-Tar
+### What this will do to your computer
+
+Boxen will install:
+
+  * [Caffeine](http://lightheadsw.com/caffeine/)
+  * [Chrome](https://www.google.com/intl/en/chrome/browser/)
+  * [GitX](https://github.com/boxen/puppet-gitx)
+  * [Homebrew](http://mxcl.github.com/homebrew/)
+  * [ImageMagick](http://www.imagemagick.org/)
+  * [ImageOptim](http://imageoptim.com/)
+  * [iTerm2](http://www.iterm2.com/)
+  * [Firefox](http://www.mozilla.org/en-US/firefox/new/)
+  * [Jumpcut](http://jumpcut.sourceforge.net/)
+  * [MDB Tools 0.7](https://github.com/brianb/mdbtools) _used by Members and Ledger to import Shepherd's Staff data_
+  * [MySQL 5.5.20](http://www.mysql.com/)
+  * [PDFtk 1.44](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to remove author metadata from PDFs_
+  * [PhantomJS 1.9.0](http://phantomjs.org/)
+  * [Postgres.app](http://postgresapp.com/)
+  * [RBenv](https://github.com/sstephenson/rbenv)
+    * Ruby 1.9.3-p392
+    * Ruby 2.0.0-p0
+  * [Redis](http://redis.io/) (used by [Resque](https://github.com/resque/resque) and [Sidekiq](http://sidekiq.org/))
+  * [TextMate 1.5.11](http://macromates.com/)
 
 
 
 
-## TODO: Make Boxen work for us
+## To Do
 
-Our requirements aren't identical with GitHub's. To begin using Boxen at CPH, we need to modify this project to represent our required configuration.
+##### These are in the Puppetfile, but I don't think Boxen successfully installed them:
 
-Here are the steps that Boxen should perform to setup an EP development environment:
+  * [Git Tower](http://www.git-tower.com/)
+  * [Pow](http://pow.cx/): `curl get.pow.cx | sh`
 
-##### Foundations
+##### Tweaks to existing packages to make the experience smoother:
 
- * :white_check_mark: Install [Homebrew](http://mxcl.github.com/homebrew/) :shipit: [boxen/puppet-homebrew](https://github.com/boxen/puppet-homebrew)
- * :white_check_mark: Install [Git](http://git-scm.org/) :shipit: [boxen/puppet-git](https://github.com/boxen/puppet-git)
+  * Symlink mysql.sock: `ln -s /opt/boxen/data/mysql/socket /tmp/mysql.sock`
+  * Put Postgres.app in PATH ahead of usr/bin: `export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH`
+  * Start Postgres.app and configure to "Automatically Start on Login"
+  * Add Jumpcut to Login Items
+  * Ruby 2.0.0-p247
 
-##### Ruby
+##### These aren't in the Puppetfile:
 
- * Install [Ruby Version Manager (RVM)](https://rvm.io/) _Note: [RBenv](https://github.com/sstephenson/rbenv) is a popular alternative. We have no reason to switch, and it is a new interface to learn, but it seems to be comparably good._ :x: _There are several on Github, none developed specifically for Boxen. The most active, [blt04/puppet-rvm](https://github.com/blt04/puppet-rvm), is specifically for installing system RVM (as root), which we do not want to do. Is there a lightweight way to run shell scripts with puppet? Installing RVM (and even the Rubies and Gems below) are simple one-liners when the requirements are met! [jfryman/puppet-rvm](https://github.com/jfryman/puppet-rvm) is promising: he works for GitHub. The others are: [fup/puppet-rvm](https://github.com/fup/puppet-rvm) and [rtyler/puppet-rvm](https://github.com/rtyler/puppet-rvm)._
-   * Install [Rubies](http://www.ruby-lang.org/en/)
-      * 1.9.3-p392
-      * 2.0.0-p0
-   * :white_check_mark: Install Gems _Most gems will be installed by bundler on behalf of the individual projects that require them. There are, however, a few global gems, not specified by Gemfiles, but required nonetheless_
-     * :white_check_mark: [Bundler](http://gembundler.com/) _For managing projects' dependencies_
-     * :white_check_mark: [Capistrano](http://capistranorb.com/) _For deploying_
-     * :white_check_mark: [rvm-capistrano](https://github.com/wayneeseguin/rvm-capistrano) _Because we deploy to servers that run RVM_
-     * :white_check_mark: [Powder](https://github.com/Rodreegez/powder) _Shortcuts for managing Pow_
- * :white_check_mark: Install [Pow](http://pow.cx/) _Pow is used to run applications locally APPNAME.dev. This is useful when you need multiple applications running on your local computer in order to develop. For example, Unite relies on both Members (@ 360.dev) and Epic Auth (@ epic-auth.dev)._ :x:
- 
-##### Databases
+  * TextMate Bundles:
+    * The [CoffeeScript Bundle](https://github.com/jashkenas/coffee-script-tmbundle)
+    * The [Cucumber Bundle](https://github.com/cucumber/cucumber-tmbundle)
+    * The [Handlebars Bundle](https://github.com/drnic/Handlebars.tmbundle)
+    * The [SCSS Bundle](https://github.com/kuroir/SCSS.tmbundle)
+  * The [Heroku Toolbelt](https://github.com/boxen/puppet-heroku)
+  * [s3cmd](http://s3tools.org/s3cmd), Amazon's command line S3 client _Can be installed with Homebrew_
+  * Ruby gems: `powder`, `capistrano`, `engineyard`
+  * [Dash](https://itunes.apple.com/us/app/dash-docs-snippets/id458034879?mt=12)
+  * [KeyCastr](http://download.cnet.com/KeyCastr/3000-2075_4-125977.html) _for pairing_
+  * [GitHub for Mac](http://mac.github.com/)
+  * [MongoDB](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/) _Errbit's database_
 
- * :white_check_mark: Install [MySQL](http://dev.mysql.com/downloads/mysql/5.1.html#downloads) _I believe the version we run is 5.1_ :shipit: [boxen/puppet-mysql](https://github.com/boxen/puppet-mysql) _uses Homebrew_
- * :white_check_mark: -- (Postgres.app) Install [Postgres](http://www.postgresql.org/download/macosx/) _I believe [Postgres.app](http://postgresapp.com/) is the best way of installing this_  :shipit: [boxen/puppet-postgresql](https://github.com/boxen/puppet-postgresql) _uses Homebrew to compile postgres, not Postgres.app..._
- * :white_check_mark: Install [Redis](http://redis.io/) _for Resque_ :shipit: [boxen/puppet-redis](https://github.com/boxen/puppet-redis)
+##### Candidates:
 
-##### Packages
+  * LastPass extension for Chrome, Firefox, and Safari
+  * [RailsCasts theme for TextMate](http://railscasts.com/about)
+  * Activate locate: `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
 
- * :white_check_mark: Install [ImageMagick](http://www.imagemagick.org/) _used by most apps that do any image resizing or processing_ :shipit: [boxen/puppet-imagemagick](https://github.com/boxen/puppet-imagemagick)
- * Install [pdftk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to modify PDF metadata_ :x:
- * Install [mdb-tools 0.7](https://github.com/brianb/mdbtools) _used by Members to import Shepherd's Staff data_ :x:
- * :white_check_mark: Install [phantomjs](http://phantomjs.org/) _used to run integration tests headlessly_ :shipit: [boxen/puppet-phantomjs](https://github.com/boxen/puppet-phantomjs)
+##### Other
 
-##### Applications
-
- * :white_check_mark: Install [Git Tower](http://www.git-tower.com/)
- * :white_check_mark: Install [TextMate](http://macromates.com/) and several bundles: :shipit: [boxen/puppet-textmate](https://github.com/boxen/puppet-textmate)
-   * The [RailsCasts TextMate Theme](http://railscasts.com/about)
-   * The [CoffeeScript Bundle](https://github.com/jashkenas/coffee-script-tmbundle)
-   * The [Cucumber Bundle](https://github.com/cucumber/cucumber-tmbundle)
-   * The [Handlebars Bundle](https://github.com/drnic/Handlebars.tmbundle)
-   * The [SCSS Bundle](https://github.com/kuroir/SCSS.tmbundle)
-   * [PeepOpen](https://peepcode.com/products/peepopen)
- * :white_check_mark: Install [Jumpcut](http://jumpcut.sourceforge.net/) _for clipboard buffering_ :shipit: [boxen/puppet-jumpcut](https://github.com/boxen/puppet-jumpcut)
- * :white_check_mark: Install [ImageOptim](http://imageoptim.com/) _for optimizing images for the web_ :shipit: [webflo/imageoptim](https://github.com/webflo/puppet-imageoptim)
- * :white_check_mark: Install [GitX](https://github.com/boxen/puppet-gitx) _useful for viewing history_ :shipit: [boxen/puppet-gitx](https://github.com/boxen/puppet-gitx)
- * :white_check_mark: Install [Caffeine](http://lightheadsw.com/caffeine/) _useful when demoing_ :shipit: [boxen/puppet-caffeine](https://github.com/boxen/puppet-caffeine)
-
-##### Browsers
-
- * :white_check_mark: Install [Google Chrome](https://www.google.com/intl/en/chrome/browser/) :shipit: [boxen/puppet-chrome](https://github.com/boxen/puppet-chrome)
- * :white_check_mark: Install [Firefox](http://www.mozilla.org/en-US/firefox/new/) :shipit: [boxen/puppet-firefox](https://github.com/boxen/puppet-firefox)
-
-##### Configuration
-
- * Clone the [EP toolchain](https://github.com/concordia-publishing-house/ep) to `~/.ep` and run `ep config all` _to write the locations of our various servers to_ `~/.ssh/config` _and various test domains to_ `/etc/hosts`.
- * [Generate an SSH Key and add it your GitHub account](https://help.github.com/articles/generating-ssh-keys#platform-mac)
+  * Share new modules with Boxen by filing an issue on [this repo](https://github.com/boxen/our-boxen) and linking to the module.
+  * Install [Boxen Web](https://github.com/boxen/boxen-web) on a VM and use it to synchronize our configuration.
 
 
 
 
 ## Getting Started
-
 
 ### Conflicts 
 
@@ -108,28 +94,25 @@ but you should check into the following before attempting to install your
 boxen on any machine (we do some checks before every Boxen run to try
 and detect most of these and tell you anyway):
 
-* Boxen __requires__ at least the Xcode Command Line Tools installed.
-* Boxen __will not__ work with an existing rvm install.
-* Boxen __may not__ play nice with an existing rbenv install.
-* Boxen __may not__ play nice with an existing chruby install.
-* Boxen __may not__ play nice with an existing homebrew install.
-* Boxen __may not__ play nice with an existing nvm install.
-* Boxen __recommends__ installing the full Xcode.
+  * Boxen __requires__ at least the Xcode Command Line Tools installed.
+  * Boxen __will not__ work with an existing rvm install.
+  * Boxen __may not__ play nice with an existing rbenv install.
+  * Boxen __may not__ play nice with an existing chruby install.
+  * Boxen __may not__ play nice with an existing homebrew install.
+  * Boxen __may not__ play nice with an existing nvm install.
+  * Boxen __recommends__ installing the full Xcode.
 
 
-### Dependencies
+### Prerequisites
 
-**Install the Xcode Command Lines Tools and/or full Xcode.**
-This will grant you the most predictable behavior in building apps like
-MacVim.
+You must have these things in place to use Boxen:
 
-How do you do it?
-
-1. Install Xcode from the Mac App Store.
-1. Open Xcode.
-1. Open the Preferences window (`Cmd-,`).
-1. Go to the Downloads tab.
-1. Install the Command Line Tools.
+  * OSX Mountain Lion
+  * [Git](http://git-scm.org/)
+  * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (Install this from the App Store)
+  * [XCode Commandline Tools](https://developer.apple.com/downloads)
+  * Full Disk Encryption [OSX: About FileVault2](https://support.apple.com/kb/HT4790)
+  * A GitHub account with Pull access to concordia-publishing-house/boxen ([how to generate an SSH Key and add it your GitHub account](https://help.github.com/articles/generating-ssh-keys#platform-mac))
 
 
 ### Getting Boxen
@@ -174,8 +157,9 @@ boxen
 This should get all the default rubygems installed.
 
 
-## Hacking on Boxen
 
+
+## Hacking on Boxen
 
 ### The Puppetfile
 
@@ -301,26 +285,6 @@ See [the documentation in the
 `modules/projects`](modules/projects/README.md)
 directory for creating organization projects (i.e., repositories that people
 will be working in).
-
-
-
-
-## The Plan
-
-The plan is to customize Boxen to automatically configure our development environment,
-find the modules we need to install the components we need or creating modules for
-tools we can't find.
-
-When we've finished setting Boxen up (using Kendall's laptop as a guinea pig),
-we'll run it on all of our laptops and standardize our environment.
-
-If we've created any modules, we'll share them with the Boxen organization by
-filing an issue on [this repo](https://github.com/boxen/our-boxen) and linking to the module.
-
-Finally, we'll set up [Boxen Web](https://github.com/boxen/boxen-web) on a VM
-and use it to synchronize our configuration.
-
-
 
 ### Help
 
