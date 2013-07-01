@@ -49,6 +49,11 @@ GITHUBTARBALL
     gitx (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-heroku
+  specs:
+    heroku (2.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.4.1)
@@ -200,6 +205,7 @@ DEPENDENCIES
   git (= 1.2.5)
   git_tower (= 1.0.0)
   gitx (= 1.2.0)
+  heroku (= 2.0.0)
   homebrew (= 1.4.1)
   hub (= 1.0.3)
   imagemagick (= 1.2.0)

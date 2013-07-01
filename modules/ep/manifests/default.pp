@@ -32,6 +32,7 @@ class ep::default {
   include autoconf
   include automake
   include mdbtools
+  include heroku
 
   class { 'ruby::global':
     version => $version,
