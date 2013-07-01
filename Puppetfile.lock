@@ -4,6 +4,11 @@ GITHUBTARBALL
     textmate (1.1.0)
 
 GITHUBTARBALL
+  remote: KendallPark/puppet-s3cmd
+  specs:
+    s3cmd (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-autoconf
   specs:
     autoconf (1.0.0)
@@ -227,6 +232,7 @@ DEPENDENCIES
   redis (= 1.0.0)
   repository (= 2.2.0)
   ruby (= 6.3.4)
+  s3cmd (= 1.0.1)
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.0)
   sudo (= 1.0.0)

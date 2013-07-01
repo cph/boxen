@@ -33,6 +33,7 @@ class ep::default {
   include automake
   include mdbtools
   include heroku
+  include s3cmd
 
   class { 'ruby::global':
     version => $version,
