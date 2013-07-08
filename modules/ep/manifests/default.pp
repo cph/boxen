@@ -19,7 +19,7 @@ class ep::default {
   include jumpcut
   include imageoptim
   include gitx
-  include git_tower
+  include tower
   include firefox
   include chrome
   include caffeine

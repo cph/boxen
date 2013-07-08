@@ -154,6 +154,11 @@ GITHUBTARBALL
     sysctl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-tower
+  specs:
+    tower (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.1.0)
@@ -172,11 +177,6 @@ GITHUBTARBALL
   remote: concordia-publishing-house/puppet-pdftk
   specs:
     pdftk (1.1.0)
-
-GITHUBTARBALL
-  remote: kevinSuttle/puppet-git_tower
-  specs:
-    git_tower (1.0.0)
 
 GITHUBTARBALL
   remote: lixef/puppet-postgresapp
@@ -208,7 +208,6 @@ DEPENDENCIES
   firefox (= 1.0.5)
   gcc (= 2.0.1)
   git (= 1.2.5)
-  git_tower (= 1.0.0)
   gitx (= 1.2.0)
   heroku (= 2.0.0)
   homebrew (= 1.4.1)
@@ -238,5 +237,6 @@ DEPENDENCIES
   sudo (= 1.0.0)
   sysctl (= 1.0.0)
   textmate (= 1.1.0)
+  tower (= 1.0.0)
   xquartz (= 1.1.0)
 
