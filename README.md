@@ -1,19 +1,24 @@
 # Boxen
 
-Boxen automates the configuration of MacBook Pros. Its purpose is:
-
- * To make it fast and easy to get a new computer's development environment up and running.
- * To ensure that all we're working with the same tools so that what works on Jesse's computer works on yours.
+Boxen automates the configuration of MacBooks.
 
 This is a fork of GitHub's [Boxen](https://github.com/boxen/our-boxen).
 
+#### Purpose
 
-### How it works
+ * To make it fast and easy to enable a new designer or developer to run EP applications
+ * To ensure that we're all working with the same tools so that what works on one computer works on another
+
+#### How it works
 
 Boxen uses [Puppet](https://puppetlabs.com/) (see [Getting Started with Puppet](https://github.com/concordia-publishing-house/boxen/blob/master/docs/puppet.md)) which is Ruby software for configuration management. Aspects of machine configuration are broken into modules. You can find quite a few at [github.com/boxen](https://github.com/boxen) and [github.com/puppetlabs](https://github.com/puppetlabs/puppet-postgresql). [puppetlabs/puppet-postgresql](https://github.com/puppetlabs/puppet-postgresql), for example, is a module for installing and configuring Postgres.
 
 
-### What this will do to your computer
+
+
+## Using Boxen
+
+#### What this will do to your computer
 
 Boxen will install:
 
@@ -38,9 +43,81 @@ Boxen will install:
   * [TextMate 1.5.11](http://macromates.com/)
 
 
+#### Prerequisites
+
+You must have these things in place to use Boxen:
+
+  * OSX Mountain Lion
+  * [Git](http://git-scm.org/) (There's an easy installer on their web site)
+  * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (Install this from the App Store)
+  * [XCode Commandline Tools](https://developer.apple.com/downloads)
+  * A GitHub account with pull access to concordia-publishing-house/boxen ([how to generate an SSH Key and add it your GitHub account](https://help.github.com/articles/generating-ssh-keys#platform-mac))
+  
+Boxen does its best not to get in the way of a dirty system,
+but you should check into the following before attempting to install your
+boxen on any machine (we do some checks before every Boxen run to try
+and detect most of these and tell you anyway):
+
+  * Boxen __will not__ work with an existing rvm install.
+  * Boxen __may not__ play nice with an existing rbenv install.
+  * Boxen __may not__ play nice with an existing chruby install.
+  * Boxen __may not__ play nice with an existing homebrew install.
+  * Boxen __may not__ play nice with an existing nvm install.
 
 
-## To Do
+#### Getting Boxen
+
+Open your Terminal and enter the following command to clone Boxen to `opt/boxen/repo`:
+
+``` sh
+sudo mkdir -p /opt/boxen
+sudo chown ${USER}:admin /opt/boxen
+git clone git@github.com:concordia-publishing-house/boxen.git /opt/boxen/repo
+```
+
+
+#### Using Boxen
+
+The following command will run Boxen:
+
+``` sh
+cd /opt/boxen/repo
+script/boxen
+```
+
+It should run successfully, and should tell you to source a shell script
+in your environment.
+
+For users without a bash or zsh config or a `~/.profile` file,
+Boxen will add a line that looks like this to the file:
+
+``` sh
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+```
+
+Once your shell is ready, open a new tab/window in your Terminal
+and you should be able to successfully run `boxen --env`.
+If that runs cleanly, you're in good shape.
+
+
+#### Troubleshooting
+
+Due to issues with switching the default version of Ruby you'll have to `bundle install` then run `boxen` again.
+
+``` sh
+bundle install
+boxen
+```
+
+This should get all the default rubygems installed.
+
+
+
+
+## Hacking on Boxen
+
+
+#### To Do
 
 ##### These are in the Puppetfile, but I don't think Boxen successfully installed them:
 
@@ -82,86 +159,7 @@ Boxen will install:
   * Install [Boxen Web](https://github.com/boxen/boxen-web) on a VM and use it to synchronize our configuration.
 
 
-
-
-## Getting Started
-
-### Conflicts 
-
-There are a few potential conflicts to keep in mind.
-Boxen does its best not to get in the way of a dirty system,
-but you should check into the following before attempting to install your
-boxen on any machine (we do some checks before every Boxen run to try
-and detect most of these and tell you anyway):
-
-  * Boxen __requires__ at least the Xcode Command Line Tools installed.
-  * Boxen __will not__ work with an existing rvm install.
-  * Boxen __may not__ play nice with an existing rbenv install.
-  * Boxen __may not__ play nice with an existing chruby install.
-  * Boxen __may not__ play nice with an existing homebrew install.
-  * Boxen __may not__ play nice with an existing nvm install.
-  * Boxen __recommends__ installing the full Xcode.
-
-
-### Prerequisites
-
-You must have these things in place to use Boxen:
-
-  * OSX Mountain Lion
-  * [Git](http://git-scm.org/)
-  * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (Install this from the App Store)
-  * [XCode Commandline Tools](https://developer.apple.com/downloads)
-  * Full Disk Encryption [OSX: About FileVault2](https://support.apple.com/kb/HT4790)
-  * A GitHub account with Pull access to concordia-publishing-house/boxen ([how to generate an SSH Key and add it your GitHub account](https://help.github.com/articles/generating-ssh-keys#platform-mac))
-
-
-### Getting Boxen
-
-``` sh
-sudo mkdir -p /opt/boxen
-sudo chown ${USER}:admin /opt/boxen
-git clone git@github.com:concordia-publishing-house/boxen.git /opt/boxen/repo
-```
-
-
-### Using Boxen
-
-Here's how to run Boxen on your laptop:
-
-``` sh
-cd /opt/boxen/repo
-script/boxen
-```
-
-It should run successfully, and should tell you to source a shell script
-in your environment.
-
-For users without a bash or zsh config or a `~/.profile` file,
-Boxen will add a line that looks like this to the file:
-
-``` sh
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-```
-
-Once your shell is ready, open a new tab/window in your Terminal
-and you should be able to successfully run `boxen --env`.
-If that runs cleanly, you're in good shape.
-
-Due to issues with switching the default version of Ruby you'll have to `bundle install` then run `boxen` again.
-
-``` sh
-bundle install
-boxen
-```
-
-This should get all the default rubygems installed.
-
-
-
-
-## Hacking on Boxen
-
-### The Puppetfile
+#### The Puppetfile
 
 You can add modules of configuration by editing the `Puppetfile` much
 as you would a `Gemfile`. The `Puppetfile` tells Boxen where to find the
@@ -217,7 +215,7 @@ include java
 ```
 
 
-### Node definitions
+#### Node definitions
 
 Puppet has the concept of a
 ['node'](http://docs.puppetlabs.com/references/glossary.html#agent),
@@ -236,7 +234,7 @@ node default {
 ```
 
 
-### How Boxen interacts with Puppet
+#### How Boxen interacts with Puppet
 
 Boxen runs everything declared in `manifests/site.pp` by default.
 But just like any other source code, throwing all your work into one massive
@@ -271,7 +269,7 @@ for:
  * [Facts](http://docs.puppetlabs.com/guides/custom_facts.html)
 
 
-### Creating a personal module
+#### Creating a personal module
 
 See [the documentation in the
 `modules/people`](modules/people/README.md)
@@ -279,13 +277,13 @@ directory for creating per-user modules that don't need to be applied
 globally to everyone.
 
 
-### Creating a project module
+#### Creating a project module
 
 See [the documentation in the
 `modules/projects`](modules/projects/README.md)
 directory for creating organization projects (i.e., repositories that people
 will be working in).
 
-### Help
+#### Help
 
 Use Issues or #boxen on irc.freenode.net.
