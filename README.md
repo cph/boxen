@@ -78,11 +78,11 @@ git clone git@github.com:concordia-publishing-house/boxen.git /opt/boxen/repo
 
 #### Using Boxen
 
-The following command will run Boxen:
+The following command will run Boxen (without requiring Full-Disk Encryption):
 
 ``` sh
 cd /opt/boxen/repo
-script/boxen
+script/boxen --no-fde
 ```
 
 It should run successfully, and should tell you to source a shell script
