@@ -214,6 +214,13 @@ Finally, you can now include the optional module in your site.pp or mypersonal.p
 include java
 ```
 
+When you make changes to `Puppetfile`, you should regenerate `Puppetfile.lock`.
+You can do that by doing a dry run of boxen:
+
+``` bash
+script/boxen --pretend
+```
+
 
 #### Node definitions
 
