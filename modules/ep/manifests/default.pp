@@ -44,17 +44,17 @@ class ep::default {
     "json for ${version}":
     gem     => 'json',
     ruby    => $version,
-    version => '1.7.7';
+    version => '1.8.0';
 
     "capistrano for ${version}":
     gem     => 'capistrano',
     ruby    => $version,
-    version => '2.14.2';
+    version => '2.15.4';
 
     "rvm-capistrano for ${version}":
     gem     => 'rvm-capistrano',
     ruby    => $version,
-    version => '1.2.7';
+    version => '1.3.1';
 
     "powder for ${version}":
     gem     => 'powder',
@@ -64,7 +64,7 @@ class ep::default {
     "faraday for ${version}":
     gem     => 'faraday',
     ruby    => $version,
-    version => '0.8.2';
+    version => '0.8.8';
 
     "engineyard for ${version}":
     gem     => 'engineyard',
