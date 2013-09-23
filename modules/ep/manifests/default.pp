@@ -65,6 +65,11 @@ class ep::default {
     gem     => 'faraday',
     ruby    => $version,
     version => '0.8.2';
+
+    "engineyard for ${version}":
+    gem     => 'engineyard',
+    ruby    => $version,
+    version => '2.1.3';
   }
 
   package { 'bash-completion':
