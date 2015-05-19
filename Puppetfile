@@ -297,24 +297,6 @@ github "imageoptim",     "0.0.2"
 #
 github "tower",          "1.1.0"
 
-# Firefox
-# https://www.mozilla.org/en-US/firefox/new/
-# https://github.com/boxen/puppet-firefox
-#
-#   Installs Firefox
-#   requirements: boxen
-#
-github "firefox",        "1.2.3"
-
-# Google Chrome
-# http://www.google.com/chrome/
-# https://github.com/boxen/puppet-chrome
-#
-#   Installs Chrome
-#   requirements: boxen
-#
-github "chrome",         "1.2.0"
-
 # Caffeine
 # https://itunes.apple.com/us/app/caffeine/id411246225?mt=12
 # https://github.com/boxen/puppet-caffeine

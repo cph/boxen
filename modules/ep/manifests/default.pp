@@ -15,8 +15,6 @@ class ep::default {
   include jumpcut
   include imageoptim
   include tower
-  include firefox
-  include chrome
   include caffeine
   include postgresapp
   include pow
