@@ -119,11 +119,6 @@ GITHUBTARBALL
     pkgconfig (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-postgresapp
-  specs:
-    postgresapp (1.0.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-pow
   specs:
     pow (2.3.0)
@@ -159,11 +154,6 @@ GITHUBTARBALL
     sysctl (1.0.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-tower
-  specs:
-    tower (1.1.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.2.1)
@@ -177,6 +167,16 @@ GITHUBTARBALL
   remote: concordia-publishing-house/puppet-pdftk
   specs:
     pdftk (1.2.2)
+
+GITHUBTARBALL
+  remote: concordia-publishing-house/puppet-postgresapp
+  specs:
+    postgresapp (9.4.1.2.1)
+
+GITHUBTARBALL
+  remote: genebot/puppet-tower
+  specs:
+    tower (1.1.1)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -220,7 +220,7 @@ DEPENDENCIES
   pdftk (= 1.2.2)
   phantomjs (= 2.4.0)
   pkgconfig (= 1.0.0)
-  postgresapp (= 1.0.0)
+  postgresapp (= 9.4.1.2.1)
   pow (= 2.3.0)
   redis (= 3.1.0)
   repository (= 2.4.1)
@@ -231,6 +231,6 @@ DEPENDENCIES
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textmate (= 1.1.0)
-  tower (= 1.1.0)
+  tower (= 1.1.1)
   xquartz (= 1.2.1)
 
