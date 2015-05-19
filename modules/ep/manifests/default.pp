@@ -26,9 +26,6 @@ class ep::default {
   include heroku
   include s3cmd
 
-  # Additional Ruby versions
-  ruby::version { "2.2.2": }
-
   # Default Ruby
   class { 'ruby::global':
     version => "2.1.2",
