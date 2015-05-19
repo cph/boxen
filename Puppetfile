@@ -218,18 +218,16 @@ github "xquartz",     "1.2.1"
 #   We keep this around for LivingWord and
 #   One in Christ
 #   requirements: boxen, homebrew, stdlib
-#   latest version: 2.0.1
 #
-github "mysql",          "1.0.1"
+github "mysql",          "2.0.1"
 
 # SysCTL
 # https://github.com/boxen/puppet-sysctl
 #
 #   Supports editing `/etc/sysctl.conf`
 #   requirements: stdlib
-#   latest version: 1.0.1
 #
-github "sysctl",         "1.0.0"
+github "sysctl",         "1.0.1"
 
 # Redis
 # http://redis.io/
@@ -239,9 +237,8 @@ github "sysctl",         "1.0.0"
 #   It is used by Resque and Sidekiq which are used by Members, Unite, and
 #   Ledger to process background jobs.
 #   requirements: boxen, homebrew, stdlib
-#   latest version: 3.1.0
 #
-github "redis",          "1.0.0"
+github "redis",          "3.1.0"
 
 # ImageMagick
 # http://www.imagemagick.org
@@ -250,9 +247,8 @@ github "redis",          "1.0.0"
 #   Open Source suite for manipulating images
 #   Used by Paperclip and CarrierWave in Members and Unite
 #   requirements: boxen, homebrew, stdlib, xquartz
-#   latest version: 1.3.0
 #
-github "imagemagick",    "1.2.0"
+github "imagemagick",    "1.3.0"
 
 # TextMate
 # https://macromates.com/
@@ -260,7 +256,6 @@ github "imagemagick",    "1.2.0"
 #
 #   This missing text editor for OSX
 #   requirements: boxen
-#   latest version: 1.1.0
 #
 github "textmate",       "1.1.0", :repo => "AquaGeek/puppet-textmate2"
 
@@ -280,7 +275,6 @@ github "sublime_text",   "1.1.0"
 # 
 #   Provides clipboard buffering
 #   requirements: none?
-#   latest version: 1.0.0
 #
 github "jumpcut",        "1.0.0"
 
@@ -291,7 +285,7 @@ github "jumpcut",        "1.0.0"
 #   Installs a utility for compressing images
 #   and making the web load faster
 #   requirements: boxen
-#   latest version: 0.0.2
+#
 github "imageoptim",     "0.0.2"
 
 # Git Tower
@@ -300,8 +294,8 @@ github "imageoptim",     "0.0.2"
 #
 #   Installs Tower
 #   requirements: boxen
-#   latest version: 1.1.0
-github "tower",          "1.0.0"
+#
+github "tower",          "1.1.0"
 
 # Firefox
 # https://www.mozilla.org/en-US/firefox/new/
@@ -309,9 +303,8 @@ github "tower",          "1.0.0"
 #
 #   Installs Firefox
 #   requirements: boxen
-#   latest version: 1.2.3
 #
-github "firefox",        "1.0.5"
+github "firefox",        "1.2.3"
 
 # Google Chrome
 # http://www.google.com/chrome/
@@ -319,9 +312,8 @@ github "firefox",        "1.0.5"
 #
 #   Installs Chrome
 #   requirements: boxen
-#   latest version: 1.2.0
 #
-github "chrome",         "1.1.0"
+github "chrome",         "1.2.0"
 
 # Caffeine
 # https://itunes.apple.com/us/app/caffeine/id411246225?mt=12
@@ -329,7 +321,6 @@ github "chrome",         "1.1.0"
 #
 #   OSX App that prevents your laptop from going to sleep
 #   requirements: boxen
-#   latest version: 1.0.0
 #
 github "caffeine",       "1.0.0"
 
@@ -339,7 +330,6 @@ github "caffeine",       "1.0.0"
 #
 #   The easiest way to install Postgres on a Mac
 #   requirements: boxen
-#   latest version: 1.0.0
 #
 github "postgresapp",    "1.0.0"
 
@@ -350,7 +340,6 @@ github "postgresapp",    "1.0.0"
 #   Installs PDFtk: a commandline toolkit for working with PDFs
 #   Used by the DR application
 #   requirements: none
-#   latest version: 1.2.2
 #
 github "pdftk",          "1.2.2", :repo => "concordia-publishing-house/puppet-pdftk"
 
@@ -360,7 +349,6 @@ github "pdftk",          "1.2.2", :repo => "concordia-publishing-house/puppet-pd
 #
 #   Installs autoconf, your favorite build and release framework
 #   requirements: boxen
-#   latest version: 1.0.0
 #
 github "autoconf",       "1.0.0"
 
@@ -373,9 +361,8 @@ github "autoconf",       "1.0.0"
 #   compliant with the GNU Coding Standards
 #   Automake requires the use of Autoconf (but not necessarily via Boxen)
 #   requirements: boxen
-#   latest version: 1.0.0
 #
-github "automake",       "1.0.1", :repo => "burke/puppet-automake"
+github "automake",       "1.0.0"
 
 # libtool
 # http://www.gnu.org/software/libtool/
@@ -383,7 +370,6 @@ github "automake",       "1.0.1", :repo => "burke/puppet-automake"
 #
 #   Installs libtoon, a generic library support script
 #   requirements: boxen, homebrew, stdlib
-#   latest version: 1.0.0
 #
 github "libtool",        "1.0.0"
 
@@ -393,9 +379,8 @@ github "libtool",        "1.0.0"
 #
 #   Installs iterm2, a terminal emulator
 #   requirements: boxen, stdlib
-#   latest version: 1.2.4
 #
-github "iterm2",         "1.0.2", :repo => "boxen/puppet-iterm2"
+github "iterm2",         "1.2.4"
 
 # mdbtools
 # http://mdbtools.sourceforge.net
@@ -403,7 +388,6 @@ github "iterm2",         "1.0.2", :repo => "boxen/puppet-iterm2"
 #
 #   Installs mdbtools, which provides programmatic access to Access DBs
 #   requirements: homebrew
-#   latest version: 1.0.0
 #
 github "mdbtools",       "1.0.0", :repo => "concordia-publishing-house/puppet-mdbtools"
 
@@ -413,9 +397,8 @@ github "mdbtools",       "1.0.0", :repo => "concordia-publishing-house/puppet-md
 #
 #   Installs Pow, which is a zero-conf rack server
 #   requirements: boxen, nginx, dnsmasq, homebrew, stdlib
-#   latest version: 2.3.0
 #
-github "pow",            "1.0.0"
+github "pow",            "2.3.0"
 
 # heroku
 # https://www.heroku.com
@@ -424,7 +407,6 @@ github "pow",            "1.0.0"
 #   Installs the Heroku CLI and allows
 #   installing Heroku plugins
 #   requirements: boxen
-#   latest version: 2.0.0
 #
 github "heroku",         "2.0.0"
 
@@ -434,6 +416,5 @@ github "heroku",         "2.0.0"
 #
 #   Installs command line tools for interacting with AWS S3.
 #   requirements: homebrew
-#   latest version: 1.0.1
 #
 github "s3cmd",          "1.0.1", :repo => "KendallPark/puppet-s3cmd"
