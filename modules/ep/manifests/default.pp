@@ -6,7 +6,7 @@ class ep::default {
 
   $profile = "/Users/${::luser}/.profile"
   $bash_completion = "# git bash completion via boxen\nif [ -f /opt/boxen/homebrew/etc/bash_completion ]; then\n. /opt/boxen/homebrew/etc/bash_completion\nfi"
-  $version = "1.9.3-p392"
+  $version = "2.0.0"
 
   # CPH defaults
   include mysql
@@ -27,7 +27,7 @@ class ep::default {
   include pow
   include pdftk
   include textmate
-  include sublime_text_2
+  #include sublime_text_2
   include iterm2::stable
   include autoconf
   include automake
@@ -35,42 +35,42 @@ class ep::default {
   include heroku
   include s3cmd
 
-  class { 'ruby::global':
-    version => $version,
-  }
+  # class { 'ruby::global':
+  #   version => $version,
+  # }
 
-  ruby::gem {
+  # ruby::gem {
 
-    "json for ${version}":
-    gem     => 'json',
-    ruby    => $version,
-    version => '1.7.7';
+  #   "json for ${version}":
+  #   gem     => 'json',
+  #   ruby    => $version,
+  #   version => '1.7.7';
 
-    "capistrano for ${version}":
-    gem     => 'capistrano',
-    ruby    => $version,
-    version => '2.14.2';
+  #   "capistrano for ${version}":
+  #   gem     => 'capistrano',
+  #   ruby    => $version,
+  #   version => '2.14.2';
 
-    "rvm-capistrano for ${version}":
-    gem     => 'rvm-capistrano',
-    ruby    => $version,
-    version => '1.2.7';
+  #   "rvm-capistrano for ${version}":
+  #   gem     => 'rvm-capistrano',
+  #   ruby    => $version,
+  #   version => '1.2.7';
 
-    "powder for ${version}":
-    gem     => 'powder',
-    ruby    => $version,
-    version => '0.2.0';
+  #   "powder for ${version}":
+  #   gem     => 'powder',
+  #   ruby    => $version,
+  #   version => '0.2.0';
 
-    "faraday for ${version}":
-    gem     => 'faraday',
-    ruby    => $version,
-    version => '0.8.2';
+  #   "faraday for ${version}":
+  #   gem     => 'faraday',
+  #   ruby    => $version,
+  #   version => '0.8.2';
 
-    "engineyard for ${version}":
-    gem     => 'engineyard',
-    ruby    => $version,
-    version => '2.1.3';
-  }
+  #   "engineyard for ${version}":
+  #   gem     => 'engineyard',
+  #   ruby    => $version,
+  #   version => '2.1.3';
+  # }
 
   package { 'bash-completion':
     ensure => installed,
