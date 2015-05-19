@@ -318,7 +318,7 @@ github "caffeine",       "1.0.0"
 #   glued to a specific version of Postgres (9.2)
 #   requirements: boxen
 #
-github "postgresapp",    "9.4.1.2", :repo => "concordia-publishing-house/puppet-postgresapp"
+github "postgresapp",    "9.4.1.2.1", :repo => "concordia-publishing-house/puppet-postgresapp"
 
 # PDFtk
 # https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
