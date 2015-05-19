@@ -249,7 +249,7 @@ github "redis",          "3.1.0"
 #   Used by Paperclip and CarrierWave in Members and Unite
 #   requirements: boxen, homebrew, stdlib, xquartz
 #
-github "imagemagick",    "1.3.0"
+github "imagemagick",    "1.2.1"
 
 # TextMate
 # https://macromates.com/

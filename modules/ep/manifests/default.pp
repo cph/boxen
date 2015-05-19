@@ -1,10 +1,8 @@
 class ep::default {
-  notify { 'installing ep stuff': }
   require boxen::config
   require homebrew
   require ruby
 
-  # CPH defaults
   include mysql
   include sysctl
   include redis
@@ -42,5 +40,4 @@ class ep::default {
     version      => '~> 1.0',
     ruby_version => '*',
   }
-
 }
