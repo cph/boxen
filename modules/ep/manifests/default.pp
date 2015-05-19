@@ -4,8 +4,6 @@ class ep::default {
   require homebrew
   require ruby
 
-  $version = "2.0.0"
-
   # CPH defaults
   include mysql
   include sysctl
@@ -16,7 +14,6 @@ class ep::default {
   include phantomjs
   include jumpcut
   include imageoptim
-  include gitx
   include tower
   include firefox
   include chrome
@@ -25,7 +22,7 @@ class ep::default {
   include pow
   include pdftk
   include textmate
-  #include sublime_text_2
+  include sublime_text
   include iterm2::stable
   include autoconf
   include automake
@@ -33,42 +30,19 @@ class ep::default {
   include heroku
   include s3cmd
 
-  # class { 'ruby::global':
-  #   version => $version,
-  # }
+  # Additional Ruby versions
+  ruby::version { "2.2.2": }
 
-  # ruby::gem {
+  # Default Ruby
+  class { 'ruby::global':
+    version => "2.1.2",
+  }
 
-  #   "json for ${version}":
-  #   gem     => 'json',
-  #   ruby    => $version,
-  #   version => '1.7.7';
-
-  #   "capistrano for ${version}":
-  #   gem     => 'capistrano',
-  #   ruby    => $version,
-  #   version => '2.14.2';
-
-  #   "rvm-capistrano for ${version}":
-  #   gem     => 'rvm-capistrano',
-  #   ruby    => $version,
-  #   version => '1.2.7';
-
-  #   "powder for ${version}":
-  #   gem     => 'powder',
-  #   ruby    => $version,
-  #   version => '0.2.0';
-
-  #   "faraday for ${version}":
-  #   gem     => 'faraday',
-  #   ruby    => $version,
-  #   version => '0.8.2';
-
-  #   "engineyard for ${version}":
-  #   gem     => 'engineyard',
-  #   ruby    => $version,
-  #   version => '2.1.3';
-  # }
+  # Make sure bundler is always there
+  ruby_gem { 'bundler for all rubies':
+    gem          => 'bundler',
+    version      => '~> 1.0',
+    ruby_version => '*',
+  }
 
 }
-
