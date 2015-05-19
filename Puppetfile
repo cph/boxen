@@ -180,7 +180,7 @@ github "repository",  "2.4.1"
 #   Sets local and global ruby versions
 #   requirements: boxen, repository, autoconf, openssl, gcc, and module-data
 #
-github "ruby",        "8.5.2"
+github "ruby",        "6.7.2"
 
 # stdlib
 #
@@ -249,7 +249,7 @@ github "redis",          "3.1.0"
 #   Used by Paperclip and CarrierWave in Members and Unite
 #   requirements: boxen, homebrew, stdlib, xquartz
 #
-github "imagemagick",    "1.2.1"
+github "imagemagick",    "1.2.0"
 
 # TextMate
 # https://macromates.com/
