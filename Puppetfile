@@ -294,9 +294,11 @@ github "imageoptim",     "0.0.2"
 # https://github.com/boxen/puppet-tower
 #
 #   Installs Tower
+#   We had to fork this because there is a typo
+#   in the canonical repo.
 #   requirements: boxen
 #
-github "tower",          "1.1.0"
+github "tower",          "1.1.1", :repo => "genebot/puppet-tower"
 
 # Caffeine
 # https://itunes.apple.com/us/app/caffeine/id411246225?mt=12
@@ -312,9 +314,11 @@ github "caffeine",       "1.0.0"
 # https://github.com/boxen/puppet-postgresapp
 #
 #   The easiest way to install Postgres on a Mac
+#   We had to fork this because the canonical repo is
+#   glued to a specific version of Postgres (9.2)
 #   requirements: boxen
 #
-github "postgresapp",    "1.0.0"
+github "postgresapp",    "9.4.1.2", :repo => "concordia-publishing-house/puppet-postgresapp"
 
 # PDFtk
 # https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
