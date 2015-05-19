@@ -194,8 +194,9 @@ github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 # https://github.com/boxen/puppet-sudo
 #
 #   Type/provider for managing sudoers file.
+#   Apparently used by something in this file.
 #
-# github "sudo",        "1.0.0"
+github "sudo",        "1.0.0"
 
 # XQuartz
 # http://xquartz.macosforge.org/landing/
