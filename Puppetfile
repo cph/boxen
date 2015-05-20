@@ -405,3 +405,13 @@ github "heroku",         "2.0.0"
 #   requirements: homebrew
 #
 github "s3cmd",          "1.0.1", :repo => "KendallPark/puppet-s3cmd"
+
+# KeyCastr
+# https://github.com/keycastr/keycastr
+# https://github.com/concordia-publishing-house/puppet-keycastr
+#
+#   Installs KeyCastr which shows which keyboard shortcuts
+#   you are typing — helpful for pairing!
+#   requirements: boxen
+#
+github "keycastr",        "1.0.0", :repo => "concordia-publishing-house/puppet-keycastr"

@@ -25,6 +25,7 @@ class ep::default {
   include mdbtools
   include heroku
   include s3cmd
+  include keycastr
 
   # Default Ruby
   class { 'ruby::global':
