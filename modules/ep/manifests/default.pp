@@ -2,6 +2,7 @@ class ep::default {
   require boxen::config
   require homebrew
   require ruby
+  require nodejs
 
   include mysql
   include sysctl
@@ -28,9 +29,10 @@ class ep::default {
   include keycastr
 
   # Default Ruby
-  class { 'ruby::global':
-    version => "2.1.2",
-  }
+  class { 'ruby::global': version => "2.1.2" }
+
+  # Default Node.js
+  class { 'nodejs::global': version => 'v0.10' }
 
   # Make sure bundler is always there
   # For installing other dependencies
