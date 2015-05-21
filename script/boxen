@@ -62,6 +62,7 @@ def skip_auto_update(reason, long_description = nil)
 end
 
 current_branch = File.directory?('.git') ? %x(git symbolic-ref HEAD).chomp : ''
+expected_branch = ENV["BOXEN_BRANCH"] || "master"
 
 if ENV["BOXEN_NO_PULL"] || ARGV.any? { |arg| no_pull_arg?(arg) }
   skip_auto_update "as requested"
@@ -78,17 +79,17 @@ elsif current_branch.empty?
     to get sorted out:
 
       cd #{Dir.pwd}
-      git checkout master
+      git checkout #{expected_branch}
       boxen
 
     For serious, you probably don't want to run with a detached head.
   END
 
-elsif current_branch != "refs/heads/master"
-  skip_auto_update "because your boxen checkout isn't on master", <<-END
+elsif current_branch != "refs/heads/#{expected_branch}"
+  skip_auto_update "because your boxen checkout isn't on #{expected_branch}", <<-END
     Working on something special, over here on a branch? That's cool! Once
     you're done, you'll probably want to submit a pull request and get back
-    onto master so that you can get some sweet, sweet updates again, though.
+    onto #{expected_branch} so that you can get some sweet, sweet updates again, though.
   END
 
 elsif !%x(git status --porcelain).chomp.empty?
@@ -97,7 +98,7 @@ elsif !%x(git status --porcelain).chomp.empty?
     Since you've got some uncommitted changes to those files, I'm
     going to take the safe road and not automatically update anything.
     If you're actively working on some Boxen, maybe you'd like to
-    switch to a branch, rather than working on master? This way I'll
+    switch to a branch, rather than working on #{expected_branch}? This way I'll
     know that you're trying something new, and won't do things like
     automatically update, or submit issues, while you're making
     changes. It makes everyone's life a bit easier \xE2\x9D\xA4
@@ -106,7 +107,7 @@ elsif !%x(git status --porcelain).chomp.empty?
     back on the golden path:
 
       cd #{Dir.pwd}
-      git reset --hard origin/master
+      git reset --hard origin/#{expected_branch}
       boxen
   END
 
@@ -120,9 +121,9 @@ elsif !system("git fetch --quiet origin")
     the site and/or your network, and try again ASAP!
   END
 
-elsif %x(git rev-list --count origin/master..master).chomp != "0"
-  update_failed "because you have unpushed commits on master", <<-END
-    Committing directly to master? You should be ashamed!
+elsif %x(git rev-list --count origin/#{expected_branch}..#{expected_branch}).chomp != "0"
+  update_failed "because you have unpushed commits on #{expected_branch}", <<-END
+    Committing directly to #{expected_branch}? You should be ashamed!
 
     ...
 
@@ -131,15 +132,15 @@ elsif %x(git rev-list --count origin/master..master).chomp != "0"
 
       git checkout -b my-cool-branch
       git push -u origin my-cool-branch
-      git checkout master
-      git reset --hard origin/master
+      git checkout #{expected_branch}
+      git reset --hard origin/#{expected_branch}
   END
 
-elsif %x(git rev-list --count HEAD..origin/master).chomp == "0"
+elsif %x(git rev-list --count HEAD..origin/#{expected_branch}).chomp == "0"
   puts "\e[0;36m--> Complete! Nothing new from upstream.\e[0m"
 
-elsif !system("git reset --hard origin/master 2>&1 >/dev/null")
-  update_failed "because resetting to origin/master was unsuccessful"
+elsif !system("git reset --hard origin/#{expected_branch} 2>&1 >/dev/null")
+  update_failed "because resetting to origin/#{expected_branch} was unsuccessful"
 
 elsif !system("git clean -qdf")
   update_failed "because cleaning up your repo failed"
