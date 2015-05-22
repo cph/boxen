@@ -57,4 +57,6 @@ See [Puppetfile](https://github.com/concordia-publishing-house/boxen/blob/master
 
 Branches are named for versions of the Boxen stack (e.g. `ep/v1` is version 1 of the Boxen stack). Should we need to rebase our work off of [boxen/our-boxen](https://github.com/boxen/our-boxen), we would create a new branch with a bumped version (e.g. `ep/v2`) and squash all of our modifications to-date into one commit.
 
+###### Getting Started
 
+Start with the [Customizing](https://github.com/boxen/our-boxen#customizing) section of Boxen's README.
