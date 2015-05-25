@@ -45,7 +45,7 @@ Boxen will install:
   * [iTerm2](http://www.iterm2.com/) _a better Terminal_
   * [Jumpcut](http://jumpcut.sourceforge.net/) _a buffered clipboard_
   * [SublimeText 3](http://www.sublimetext.com/) _a text editor_
-  * [TextMate 1.5](http://macromates.com/) _a text editor_
+  * [TextMate 2](https://github.com/textmate/textmate) _a text editor_
 
 See [Puppetfile](https://github.com/concordia-publishing-house/boxen/blob/master/Puppetfile) and [modules/ep/manifests/default.pp](https://github.com/concordia-publishing-house/boxen/blob/master/modules/ep/manifests/default.pp) for the complete listing.
 

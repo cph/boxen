@@ -18,7 +18,7 @@ class ep::default {
   include postgresapp
   include pow
   include pdftk
-  include textmate
+  include textmate::textmate2::release
   include sublime_text
   include iterm2::stable
   include autoconf

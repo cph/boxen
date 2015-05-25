@@ -1,9 +1,4 @@
 GITHUBTARBALL
-  remote: AquaGeek/puppet-textmate2
-  specs:
-    textmate (1.1.0)
-
-GITHUBTARBALL
   remote: KendallPark/puppet-s3cmd
   specs:
     s3cmd (1.0.1)
@@ -152,6 +147,11 @@ GITHUBTARBALL
   remote: boxen/puppet-sysctl
   specs:
     sysctl (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-textmate
+  specs:
+    textmate (1.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz

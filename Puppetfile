@@ -258,7 +258,7 @@ github "imagemagick",    "1.3.0"
 #   This missing text editor for OSX
 #   requirements: boxen
 #
-github "textmate",       "1.1.0", :repo => "AquaGeek/puppet-textmate2"
+github "textmate",       "1.1.0"
 
 # Sublime Text
 # http://www.sublimetext.com/
