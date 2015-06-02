@@ -4,6 +4,7 @@ class ep::default {
   require ruby
   require nodejs
 
+  include brewcask
   include mysql
   include sysctl
   include redis
@@ -27,6 +28,12 @@ class ep::default {
   include heroku
   include s3cmd
   include keycastr
+
+  # Use Brewcask to install Screenhero
+  # Note: it seems like this is the way to go for new apps:
+  # https://github.com/boxen/our-boxen/issues/683#issuecomment-64502104
+  # See https://github.com/caskroom/homebrew-cask
+  package { 'screenhero': provider => 'brewcask' }
 
   # Default Ruby
   class { 'ruby::global': version => "2.1.2" }
