@@ -220,7 +220,12 @@ github "xquartz",     "1.2.1"
 #   One in Christ
 #   requirements: boxen, homebrew, stdlib
 #
-github "mysql",          "2.0.1"
+#   Note: we are using our branch of this module
+#   because we need the fix contained in these
+#   two commits:
+#   https://github.com/concordia-publishing-house/puppet-mysql/compare/2.0.1...2.0.2
+#
+github "mysql",          "2.0.2", repo: "concordia-publishing-house/puppet-mysql"
 
 # SysCTL
 # https://github.com/boxen/puppet-sysctl
