@@ -64,6 +64,11 @@ GITHUBTARBALL
     libtool (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-mysql
+  specs:
+    mysql (2.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-nginx
   specs:
     nginx (1.6.0)
@@ -144,11 +149,6 @@ GITHUBTARBALL
     mdbtools (1.0.0)
 
 GITHUBTARBALL
-  remote: concordia-publishing-house/puppet-mysql
-  specs:
-    mysql (2.0.2)
-
-GITHUBTARBALL
   remote: concordia-publishing-house/puppet-pdftk
   specs:
     pdftk (1.2.2)
@@ -196,7 +196,7 @@ DEPENDENCIES
   libtool (= 1.0.0)
   mdbtools (= 1.0.0)
   module_data (= 0.0.4)
-  mysql (= 2.0.2)
+  mysql (= 2.2.0)
   nginx (= 1.6.0)
   nodejs (= 5.0.5)
   openssl (= 1.0.0)

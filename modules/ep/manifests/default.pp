@@ -38,6 +38,10 @@ class ep::default {
   package { 'caffeine': provider => 'brewcask' }
   package { 'keycastr': provider => 'brewcask' }
 
+  package { 'mdbtools':
+    ensure   => installed,
+    provider => 'homebrew' }
+
   # # Use Brewcask to install boot2docker
   # # http://docs.docker.com/installation/mac/
   # package { 'boot2docker': provider => 'brewcask' }
