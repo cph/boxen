@@ -12,10 +12,11 @@ class ep::default {
   include pkgconfig
   include imagemagick
   include phantomjs
-  include jumpcut
-  include imageoptim
-  include tower
-  include caffeine
+  # include tower
+  # include jumpcut
+  # include imageoptim
+  # include caffeine
+  # include keycastr
   include postgresapp
   include pow
   include pdftk
@@ -27,13 +28,26 @@ class ep::default {
   include mdbtools
   include heroku
   include s3cmd
-  include keycastr
 
-  # Use Brewcask to install Screenhero
+  # Use Brewcask to install several apps
   # Note: it seems like this is the way to go for new apps:
   # https://github.com/boxen/our-boxen/issues/683#issuecomment-64502104
   # See https://github.com/caskroom/homebrew-cask
+  # See http://caskroom.io/search
+
   package { 'screenhero': provider => 'brewcask' }
+  package { 'tower': provider => 'brewcask' }
+  package { 'jumpcut': provider => 'brewcask' }
+  package { 'imageoptim': provider => 'brewcask' }
+  package { 'caffeine': provider => 'brewcask' }
+  package { 'keycastr': provider => 'brewcask' }
+
+  # # Use Brewcask to install boot2docker
+  # # http://docs.docker.com/installation/mac/
+  # package { 'boot2docker': provider => 'brewcask' }
+
+  # Use Homebrew to install wget
+  # package { 'wget': provider => 'homebrew' }
 
   # Default Ruby
   class { 'ruby::global': version => "2.1.2" }

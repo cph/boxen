@@ -82,12 +82,13 @@ github "dnsmasq",     "2.0.1"
 github "gcc",         "2.2.1"
 
 # Git
+# https://github.com/boxen/puppet-git
 #
 #   Git should already be installed but this
 #   adds some commands for Puppet
 #   requirements: boxen, homebrew, inifile
 #
-github "git",         "2.7.9"
+github "git",         "2.7.12"
 
 # Go
 #
@@ -98,12 +99,13 @@ github "git",         "2.7.9"
 # github "go",          "2.1.0"
 
 # Homebrew
+# https://github.com/boxen/puppet-homebrew
 #
 #   Mac's best package manager
 #   Adds commands for puppet for installing homebrew formulae
 #   requirements: boxen, repository, stdlib
 #
-github "homebrew",    "1.12.0"
+github "homebrew",    "2.0.0"
 
 # Hub
 #
@@ -138,9 +140,10 @@ github "nginx",       "1.4.5"
 #   Set nodejs versions, install npm modules
 #   requirements: boxen, repository, stdlib, module-data
 #
-github "nodejs",      "4.0.1"
+github "nodejs",      "5.0.5"
 
 # openssl
+# https://github.com/boxen/puppet-openssl
 #
 #   Installs openssl and that's it, it seems
 #   requirements: none
@@ -155,7 +158,7 @@ github "openssl",     "1.0.0"
 #   Adds commands to set local and global versions of phantomjs
 #   requirements: boxen, homebrew, repository, stdlib
 #
-github "phantomjs",   "2.4.0"
+github "phantomjs",   "3.0.0"
 
 # pkgconfig
 #
@@ -180,7 +183,7 @@ github "repository",  "2.4.1"
 #   Sets local and global ruby versions
 #   requirements: boxen, repository, autoconf, openssl, gcc, and module-data
 #
-github "ruby",        "8.5.2"
+github "ruby",        "8.5.4"
 
 # stdlib
 #
@@ -323,7 +326,7 @@ github "caffeine",       "1.0.0"
 #   glued to a specific version of Postgres (9.2)
 #   requirements: boxen
 #
-github "postgresapp",    "9.4.1.2.1", :repo => "concordia-publishing-house/puppet-postgresapp"
+github "postgresapp",    "9.4.5.0", :repo => "concordia-publishing-house/puppet-postgresapp"
 
 # PDFtk
 # https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
@@ -372,7 +375,7 @@ github "libtool",        "1.0.0"
 #   Installs iterm2, a terminal emulator
 #   requirements: boxen, stdlib
 #
-github "iterm2",         "1.2.4"
+github "iterm2",         "1.2.5"
 
 # mdbtools
 # http://mdbtools.sourceforge.net
@@ -390,7 +393,7 @@ github "mdbtools",       "1.0.0", :repo => "concordia-publishing-house/puppet-md
 #   Installs Pow, which is a zero-conf rack server
 #   requirements: boxen, nginx, dnsmasq, homebrew, stdlib
 #
-github "pow",            "2.3.0"
+github "pow",            "2.3.2"
 
 # heroku
 # https://www.heroku.com
@@ -400,7 +403,7 @@ github "pow",            "2.3.0"
 #   installing Heroku plugins
 #   requirements: boxen
 #
-github "heroku",         "2.0.0"
+github "heroku",         "2.1.1"
 
 # s3cmd
 # http://s3tools.org/s3cmd
