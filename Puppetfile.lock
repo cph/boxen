@@ -19,11 +19,6 @@ GITHUBTARBALL
     boxen (3.10.4)
 
 GITHUBTARBALL
-  remote: boxen/puppet-brewcask
-  specs:
-    brewcask (0.0.6)
-
-GITHUBTARBALL
   remote: boxen/puppet-caffeine
   specs:
     caffeine (1.0.0)
@@ -184,6 +179,11 @@ GITHUBTARBALL
     tower (1.1.1)
 
 GITHUBTARBALL
+  remote: n0ts/puppet-brewcask
+  specs:
+    brewcask (0.0.6b)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.1.1)
@@ -202,7 +202,7 @@ DEPENDENCIES
   autoconf (= 1.0.0)
   automake (= 1.0.0)
   boxen (= 3.10.4)
-  brewcask (= 0.0.6)
+  brewcask (= 0.0.6b)
   caffeine (= 1.0.0)
   dnsmasq (= 2.0.1)
   gcc (= 2.2.1)

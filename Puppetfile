@@ -52,7 +52,8 @@ github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
 #   extends Homebrew with a better user interface
 #   requirements: homebrew
 #
-github "brewcask",    "0.0.6"
+# github "brewcask",    "0.0.6"
+github "brewcask",    "0.0.6b", repo: "n0ts/puppet-brewcask"
 
 # Dnsmasq
 # http://www.thekelleys.org.uk/dnsmasq/doc.html
