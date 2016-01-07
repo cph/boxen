@@ -89,7 +89,7 @@ github "gcc",         "3.0.2"
 #   adds some commands for Puppet
 #   requirements: boxen, homebrew, inifile
 #
-github "git",         "2.7.92"
+github "git",         "2.7.12"
 
 # Go
 #
