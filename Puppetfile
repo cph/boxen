@@ -29,11 +29,11 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.10.4"
+github "boxen", "3.11.1"
 
 # Support for default hiera data in modules
 
-github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
+github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 
 
 # ## Recommended by GitHub
@@ -80,7 +80,7 @@ github "dnsmasq",     "2.0.1"
 #   but some things won't complete with that
 #   requirements: boxen, homebrew, stdlib
 #
-github "gcc",         "2.2.1"
+github "gcc",         "3.0.2"
 
 # Git
 # https://github.com/boxen/puppet-git
@@ -89,7 +89,7 @@ github "gcc",         "2.2.1"
 #   adds some commands for Puppet
 #   requirements: boxen, homebrew, inifile
 #
-github "git",         "2.7.12"
+github "git",         "2.7.92"
 
 # Go
 #
@@ -121,7 +121,7 @@ github "hub",         "1.4.1"
 #   Supports managing INI-style configuration files
 #   requirements: none
 #
-github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
+github "inifile",     "1.4.1", :repo => "puppetlabs/puppetlabs-inifile"
 
 # nginx
 # http://nginx.org/
@@ -132,7 +132,7 @@ github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
 #   Used by pow.cx
 #   requirements: boxen, homebrew, stdlib
 #
-github "nginx",       "1.4.5"
+github "nginx",       "1.6.0"
 
 # node.js
 # https://nodejs.org/
@@ -192,7 +192,7 @@ github "ruby",        "8.5.4"
 #   stages, facts, functions, defined resource types, types, providers and more
 #   requirements: none
 #
-github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
+github "stdlib",      "4.7.0", :repo => "puppetlabs/puppetlabs-stdlib"
 
 # Sudo
 # https://github.com/boxen/puppet-sudo
@@ -278,45 +278,6 @@ github "textmate",       "1.1.0"
 #   requirements: boxen, stdlib, repository
 #
 github "sublime_text",   "1.1.0"
-
-# Jumpcut
-# http://jumpcut.sourceforge.net/
-# https://github.com/boxen/puppet-jumpcut
-# 
-#   Provides clipboard buffering
-#   requirements: none?
-#
-github "jumpcut",        "1.0.0"
-
-# ImageOptim
-# https://imageoptim.com/
-# https://github.com/boxen/puppet-imageoptim
-#
-#   Installs a utility for compressing images
-#   and making the web load faster
-#   requirements: boxen
-#
-github "imageoptim",     "0.0.2"
-
-# Git Tower
-# http://www.git-tower.com/
-# https://github.com/boxen/puppet-tower
-#
-#   Installs Tower
-#   We had to fork this because there is a typo
-#   in the canonical repo.
-#   requirements: boxen
-#
-github "tower",          "1.1.1", :repo => "genebot/puppet-tower"
-
-# Caffeine
-# https://itunes.apple.com/us/app/caffeine/id411246225?mt=12
-# https://github.com/boxen/puppet-caffeine
-#
-#   OSX App that prevents your laptop from going to sleep
-#   requirements: boxen
-#
-github "caffeine",       "1.0.0"
 
 # Postgres.app
 # http://postgresapp.com/

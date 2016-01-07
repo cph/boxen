@@ -12,10 +12,6 @@ class ep::default {
   include pkgconfig
   include imagemagick
   include phantomjs
-  # include tower
-  # include jumpcut
-  # include imageoptim
-  # include caffeine
   # include keycastr
   include postgresapp
   include pow
