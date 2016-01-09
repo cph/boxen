@@ -25,6 +25,16 @@ class ep::default {
     ensure   => installed,
     provider => 'homebrew' }
 
+  # Allow the Keycastr installer to enable accessibility access
+  sudoers { 'installer':
+     users    => $::boxen_user,
+     hosts    => 'ALL',
+     commands => [
+       '(ALL) SETENV:NOPASSWD: /usr/bin/sqlite3',
+     ],
+     type     => 'user_spec',
+   }
+
   # Use Brewcask to install several apps
   # Note: it seems like this is the way to go for new apps:
   # https://github.com/boxen/our-boxen/issues/683#issuecomment-64502104
@@ -35,7 +45,7 @@ class ep::default {
   package { 'imageoptim': provider => 'brewcask' }
   package { 'iterm2': provider => 'brewcask' }
   package { 'jumpcut': provider => 'brewcask' }
-  package { 'keycastr': provider => 'brewcask' }
+  package { 'keycastr': provider => 'brewcask', require => Sudoers['installer'] }
   package { 'screenhero': provider => 'brewcask' }
   package { 'slack': provider => 'brewcask' }
   package { 'sublime-text': provider => 'brewcask' }
