@@ -20,10 +20,14 @@ class ep::default {
   include heroku
   include s3cmd
 
-  # Use Homebrew directly to install several things
-  package { 'mdbtools':
-    ensure   => installed,
-    provider => 'homebrew' }
+  # Members and Ledger use mdbtools to import Shepherd's Staff databases
+  package { 'mdbtools': ensure   => installed, provider => 'homebrew' }
+
+  # CMake is required to build the Ruby gem Rugged (which is used by Houston)
+  package { 'cmake': ensure   => installed, provider => 'homebrew' }
+
+  # Rugged requires libssh2 to clone Git repos using SSH
+  package { 'libssh2': ensure   => installed, provider => 'homebrew' }
 
   # Allow the Keycastr installer to enable accessibility access
   sudoers { 'installer':
