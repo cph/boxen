@@ -45,6 +45,7 @@ class ep::default {
   # See https://github.com/caskroom/homebrew-cask
   # See http://caskroom.io/search
 
+  package { 'atom': provider => 'brewcask' }
   package { 'caffeine': provider => 'brewcask' }
   package { 'imageoptim': provider => 'brewcask' }
   package { 'iterm2': provider => 'brewcask' }
