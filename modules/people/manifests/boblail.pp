@@ -3,7 +3,7 @@ class people::boblail {
 
   $home     = "/Users/${::boxen_user}"
   
-  repository { "${home}/dotfiles": source  => 'boblail/dotfiles' }
+  repository { "${home}/Me": source  => 'boblail/dotfiles' }
 
   package { 'dropbox': provider => 'brewcask' }
   package { 'nvalt': provider => 'brewcask' }
