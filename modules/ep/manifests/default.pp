@@ -52,6 +52,7 @@ class ep::default {
   package { 'jumpcut': provider => 'brewcask' }
   package { 'keycastr': provider => 'brewcask', require => Sudoers['installer'] }
   package { 'lastpass': provider => 'brewcask' }
+  package { 'licecap': provider => 'brewcask' }
   package { 'screenhero': provider => 'brewcask' }
   package { 'slack': provider => 'brewcask' }
   package { 'sublime-text': provider => 'brewcask' }
