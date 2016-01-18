@@ -7,5 +7,8 @@ class people::boblail {
 
   package { 'dropbox': provider => 'brewcask' }
   package { 'nvalt': provider => 'brewcask' }
+  package { 'flux': provider => 'brewcask' }
+  package { 'numi': provider => 'brewcask' }
+  package { 'sonos': provider => 'brewcask' }
 
 }
