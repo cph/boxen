@@ -11,5 +11,6 @@ class people::boblail {
   package { 'numi': provider => 'brewcask' }
   package { 'sonos': provider => 'brewcask' }
   package { 'cyberduck': provider => 'brewcask' } # for Builder's web services
+  package { 'doxie': provider => 'brewcask' }
 
 }
