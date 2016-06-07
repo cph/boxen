@@ -106,7 +106,7 @@ github "git",         "2.7.12"
 #   Adds commands for puppet for installing homebrew formulae
 #   requirements: boxen, repository, stdlib
 #
-github "homebrew",    "2.0.0"
+github "homebrew",    "2.0.2"
 
 # Hub
 #
