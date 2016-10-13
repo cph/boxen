@@ -124,17 +124,17 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
-  remote: concordia-publishing-house/puppet-brewcask
+  remote: cph/puppet-brewcask
   specs:
     brewcask (0.0.7)
 
 GITHUBTARBALL
-  remote: concordia-publishing-house/puppet-pdftk
+  remote: cph/puppet-pdftk
   specs:
     pdftk (1.2.2)
 
 GITHUBTARBALL
-  remote: concordia-publishing-house/puppet-postgresapp
+  remote: cph/puppet-postgresapp
   specs:
     postgresapp (9.4.5.0)
 

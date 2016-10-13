@@ -12,13 +12,13 @@ Boxen uses [Puppet](https://puppetlabs.com/) (see [Getting Started with Puppet](
 
 ## Using Boxen
 
-Install [the EP toolchain](https://github.com/concordia-publishing-house/ep#installing-ep) and run:
+Install [the EP toolchain](https://github.com/cph/ep#installing-ep) and run:
 
 ```
 ep update --bootstrap
 ```
 
-If you encounter any problems with this step, see [Troubleshooting EP Bootstrap](https://github.com/concordia-publishing-house/ep/wiki/Troubleshooting-EP-Bootstrap).
+If you encounter any problems with this step, see [Troubleshooting EP Bootstrap](https://github.com/cph/ep/wiki/Troubleshooting-EP-Bootstrap).
 
 
 
@@ -48,7 +48,7 @@ Boxen will install:
   * [SublimeText 2](http://www.sublimetext.com/) _a text editor_
   * [TextMate 2](https://github.com/textmate/textmate) _a text editor_
 
-See [Puppetfile](https://github.com/concordia-publishing-house/boxen/blob/master/Puppetfile) and [modules/ep/manifests/default.pp](https://github.com/concordia-publishing-house/boxen/blob/master/modules/ep/manifests/default.pp) for the complete listing.
+See [Puppetfile](https://github.com/cph/boxen/blob/master/Puppetfile) and [modules/ep/manifests/default.pp](https://github.com/cph/boxen/blob/master/modules/ep/manifests/default.pp) for the complete listing.
 
 
 

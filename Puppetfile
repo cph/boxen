@@ -53,7 +53,7 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 #   requirements: homebrew
 #
 # github "brewcask",    "0.0.6"
-github "brewcask",    "0.0.7", repo: "concordia-publishing-house/puppet-brewcask"
+github "brewcask",    "0.0.7", repo: "cph/puppet-brewcask"
 
 # Dnsmasq
 # http://www.thekelleys.org.uk/dnsmasq/doc.html
@@ -70,7 +70,7 @@ github "dnsmasq",     "2.0.1"
 #
 #   A complete lifecycle management tool for physical and virtual servers
 #   requirements: boxen
-#    
+#
 # github "foreman",     "1.2.0"
 
 # GCC
@@ -93,7 +93,7 @@ github "git",         "2.7.12"
 
 # Go
 #
-#   Go is a programming language. 
+#   Go is a programming language.
 #   Supports changing go versions and installing go modules
 #   requirements: boxen, repository, stdlib
 #
@@ -228,7 +228,7 @@ github "xquartz",     "1.2.1"
 #   Note: we are using our branch of this module
 #   because we need the fix contained in these
 #   two commits:
-#   https://github.com/concordia-publishing-house/puppet-mysql/compare/2.0.1...2.0.2
+#   https://github.com/cph/puppet-mysql/compare/2.0.1...2.0.2
 #
 github "mysql",           "2.2.0"
 
@@ -270,17 +270,17 @@ github "imagemagick",    "1.3.0"
 #   glued to a specific version of Postgres (9.2)
 #   requirements: boxen
 #
-github "postgresapp",    "9.4.5.0", :repo => "concordia-publishing-house/puppet-postgresapp"
+github "postgresapp",    "9.4.5.0", :repo => "cph/puppet-postgresapp"
 
 # PDFtk
 # https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
-# https://github.com/concordia-publishing-house/puppet-pdftk
+# https://github.com/cph/puppet-pdftk
 #
 #   Installs PDFtk: a commandline toolkit for working with PDFs
 #   Used by the DR application
 #   requirements: none
 #
-github "pdftk",          "1.2.2", :repo => "concordia-publishing-house/puppet-pdftk"
+github "pdftk",          "1.2.2", :repo => "cph/puppet-pdftk"
 
 # autoconf
 # http://www.gnu.org/software/autoconf/autoconf.html
