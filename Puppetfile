@@ -270,7 +270,7 @@ github "imagemagick",    "1.3.0"
 #   glued to a specific version of Postgres (9.2)
 #   requirements: boxen
 #
-github "postgresapp",    "9.4.5.0", :repo => "cph/puppet-postgresapp"
+github "postgresapp",    "9.6.0", :repo => "cph/puppet-postgresapp"
 
 # PDFtk
 # https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
