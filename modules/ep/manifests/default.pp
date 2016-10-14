@@ -55,8 +55,6 @@ class ep::default {
   package { 'licecap': provider => 'brewcask' }
   package { 'screenhero': provider => 'brewcask' }
   package { 'slack': provider => 'brewcask' }
-  package { 'sublime-text': provider => 'brewcask' }
-  package { 'textmate': provider => 'brewcask' }
   package { 'tower': provider => 'brewcask' }
 
   # # Use Brewcask to install boot2docker
