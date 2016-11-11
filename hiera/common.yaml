@@ -8,5 +8,5 @@
 # heart's content.
 
 # See https://github.com/boxen/puppet-ruby for docs
-ruby::global::version: "2.1.2"
-ruby::build::ensure: "v20160111"
+ruby::global::version: "2.3.1"
+ruby::build::ensure: "v20160913"
