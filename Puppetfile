@@ -235,16 +235,6 @@ github "sysctl",         "1.0.1"
 #
 github "redis",          "4.0.2"
 
-# ImageMagick
-# http://www.imagemagick.org
-# https://github.com/boxen/puppet-imagemagick
-#
-#   Open Source suite for manipulating images
-#   Used by Paperclip and CarrierWave in Members and Unite
-#   requirements: boxen, homebrew, stdlib, xquartz
-#
-github "imagemagick",    "1.3.0"
-
 # Postgres.app
 # http://postgresapp.com/
 # https://github.com/boxen/puppet-postgresapp

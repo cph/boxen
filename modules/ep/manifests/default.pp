@@ -9,7 +9,6 @@ class ep::default {
   include redis
   include xquartz
   include pkgconfig
-  include imagemagick
   include phantomjs
   include postgresapp
   include pow
@@ -18,6 +17,8 @@ class ep::default {
   include automake
   include heroku
   include s3cmd
+
+  package { 'imagemagick': ensure   => installed, provider => 'homebrew' }
 
   # Members and Ledger use mdbtools to import Shepherd's Staff databases
   package { 'mdbtools': ensure   => installed, provider => 'homebrew' }
