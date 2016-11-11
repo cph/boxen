@@ -12,7 +12,7 @@ Boxen uses [Puppet](https://puppetlabs.com/) (see [Getting Started with Puppet](
 
 ## Using Boxen
 
-Install [the EP toolchain](https://github.com/cph/ep#installing-ep) and run:
+[Install the EP toolchain](https://github.com/cph/ep#installing-ep) and run:
 
 ```
 ep update --bootstrap
@@ -30,23 +30,21 @@ Boxen will install:
 
   * [ImageMagick](http://www.imagemagick.org/) _image manipulation utilities used by Members and Unite_
   * [mdbtools](https://github.com/brianb/mdbtools) _used by Members and Ledger to import Shepherd's Staff data_
-  * [MySQL](http://www.mysql.com/) _the database_
   * [PDFtk](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) _used by Doctrinal Review to remove author metadata from PDFs_
   * [PhantomJS](http://phantomjs.org/) _a headless browser, super useful for running client-side test suites_
   * [Postgres.app](http://postgresapp.com/) _the database_
   * [RBenv](https://github.com/sstephenson/rbenv) _for managing and switching between multiple versions of ruby_
-  * [Redis](http://redis.io/) _a key-value store used by [Resque](https://github.com/resque/resque) and [Sidekiq](http://sidekiq.org/)_
+  * [Redis](http://redis.io/) _a key-value store used by ActionCable, [Resque](https://github.com/resque/resque) and [Sidekiq](http://sidekiq.org/)_
 
 ###### Applications
 
+  * [Atom](https://atom.io/) _EP's preferred text editor_
   * [Caffeine](http://lightheadsw.com/caffeine/) _a lightweight app that keeps your laptop from going to sleep_
   * [Git Tower](http://www.git-tower.com/) _a great GUI for Git_
   * [Homebrew](http://mxcl.github.com/homebrew/) _the best package manager available for OSX_
   * [iTerm2](http://www.iterm2.com/) _a better Terminal_
   * [Jumpcut](http://jumpcut.sourceforge.net/) _a buffered clipboard_
   * [Slack](https://slack.com/) _a team communication tool_
-  * [SublimeText 2](http://www.sublimetext.com/) _a text editor_
-  * [TextMate 2](https://github.com/textmate/textmate) _a text editor_
 
 See [Puppetfile](https://github.com/cph/boxen/blob/master/Puppetfile) and [modules/ep/manifests/default.pp](https://github.com/cph/boxen/blob/master/modules/ep/manifests/default.pp) for the complete listing.
 
