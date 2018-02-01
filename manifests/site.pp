@@ -1,6 +1,6 @@
 require boxen::environment
 require homebrew
-require gcc
+# require gcc
 
 Exec {
   group       => 'staff',
@@ -64,15 +64,13 @@ node default {
   }
 
   # node versions
-  nodejs::version { '0.8': }
-  nodejs::version { '0.10': }
-  nodejs::version { '0.12': }
+  # nodejs::version { '4.4.5': } # <-- default version on EngineYard's stable-v5 stack
 
   # default ruby versions
-  ruby::version { '1.9.3': }
-  ruby::version { '2.1.9': }
-  ruby::version { '2.2.5': }
-  ruby::version { '2.3.1': }
+  # ruby::version { '1.9.3': }
+  # ruby::version { '2.1.9': }
+  # ruby::version { '2.2.5': }
+  # ruby::version { '2.3.1': }
 
   # common, useful packages
   package {

@@ -53,7 +53,6 @@ class ep::default {
   package { 'keycastr': provider => 'brewcask', require => Sudoers['installer'] }
   package { 'lastpass': provider => 'brewcask' }
   package { 'licecap': provider => 'brewcask' }
-  package { 'screenhero': provider => 'brewcask' }
   package { 'slack': provider => 'brewcask' }
   package { 'tower': provider => 'brewcask' }
 
@@ -62,10 +61,10 @@ class ep::default {
   # package { 'boot2docker': provider => 'brewcask' }
 
   # Default Ruby
-  class { 'ruby::global': version => "2.1.2" }
+  class { 'ruby::global': version => "2.3.1" }
 
   # Default Node.js
-  class { 'nodejs::global': version => '0.10' }
+  class { 'nodejs::global': version => '4.4.5' } # <-- default version on EngineYard's stable-v5 stack
 
   # Make sure bundler is always there
   # For installing other dependencies

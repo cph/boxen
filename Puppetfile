@@ -29,7 +29,7 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.11.1"
+github "boxen", "3.13.0"
 
 # Support for default hiera data in modules
 
@@ -52,7 +52,7 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 #   extends Homebrew with a better user interface
 #   requirements: homebrew
 #
-github "brewcask",    "0.0.7"
+github "brewcask",    "0.0.10"
 
 # Dnsmasq
 # http://www.thekelleys.org.uk/dnsmasq/doc.html
@@ -61,7 +61,7 @@ github "brewcask",    "0.0.7"
 #   Resolves anything at .dev to 127.0.0.1
 #   requirements: boxen, homebrew
 #
-github "dnsmasq",     "2.0.2"
+github "dnsmasq",     "2.0.4"
 
 # Foreman
 # http://theforeman.org/
@@ -79,7 +79,7 @@ github "dnsmasq",     "2.0.2"
 #   but some things won't complete with that
 #   requirements: boxen, homebrew, stdlib
 #
-github "gcc",         "3.0.2"
+# github "gcc",         "3.0.2"
 
 # Git
 # https://github.com/boxen/puppet-git
@@ -105,14 +105,14 @@ github "git",         "2.10.0"
 #   Adds commands for puppet for installing homebrew formulae
 #   requirements: boxen, repository, stdlib
 #
-github "homebrew",    "2.1.0"
+github "homebrew",    "2.2.0"
 
 # Hub
 #
 #   This is GitHub's neato git extension.
 #   requirements: boxen, homebrew
 #
-github "hub",         "1.4.4"
+github "hub",         "1.4.5"
 
 # inifile
 # https://github.com/puppetlabs/puppetlabs-inifile
@@ -131,7 +131,7 @@ github "inifile",     "1.4.1", :repo => "puppetlabs/puppetlabs-inifile"
 #   Used by pow.cx
 #   requirements: boxen, homebrew, stdlib
 #
-github "nginx",       "1.7.0"
+github "nginx",       "1.9.0"
 
 # node.js
 # https://nodejs.org/
@@ -140,7 +140,7 @@ github "nginx",       "1.7.0"
 #   Set nodejs versions, install npm modules
 #   requirements: boxen, repository, stdlib, module-data
 #
-github "nodejs",      "5.0.8"
+github "nodejs",      "5.0.9"
 
 # openssl
 # https://github.com/boxen/puppet-openssl
@@ -183,7 +183,7 @@ github "repository",  "2.4.1"
 #   Sets local and global ruby versions
 #   requirements: boxen, repository, autoconf, openssl, gcc, and module-data
 #
-github "ruby",        "8.5.6"
+github "ruby",        "8.6.0"
 
 # stdlib
 #
